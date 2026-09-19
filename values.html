@@ -112,22 +112,27 @@
 
         /* Header Navigation */
         .site-header {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(32, 0, 44, 0.94);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(175, 128, 54, 0.2);
-            padding: 18px 0;
+            z-index: 120;
+            background: rgba(32, 0, 44, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(196, 160, 82, 0.2);
         }
 
         .header-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            height: 78px;
+        }
+
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
         }
 
         .brand-logo-img {
@@ -138,43 +143,45 @@
 
         .brand-title-fallback {
             font-family: var(--font-serif);
-            font-size: 1.7rem;
-            color: #FAF8F5;
+            font-size: 1.6rem;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            color: #FFFFFF;
+            letter-spacing: 0.02em;
         }
 
         .main-nav-links {
             display: flex;
-            list-style: none;
+            align-items: center;
             gap: 28px;
+            list-style: none;
         }
 
         .main-nav-links a {
-            color: rgba(250, 248, 245, 0.85);
+            color: rgba(255, 255, 255, 0.82);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
             transition: color var(--transition);
         }
 
-        .main-nav-links a:hover {
+        .main-nav-links a:hover,
+        .main-nav-links a.active {
             color: var(--gold-accent);
         }
 
         .header-controls {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
 
         .theme-toggle-btn {
             background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(175, 128, 54, 0.3);
-            color: #FAF8F5;
+            border: 1px solid rgba(196, 160, 82, 0.3);
+            border-radius: var(--radius-btn);
+            color: var(--gold-accent);
             width: 36px;
             height: 36px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -183,36 +190,80 @@
         }
 
         .theme-toggle-btn:hover {
-            border-color: var(--gold-accent);
-            color: var(--gold-accent);
+            background: rgba(196, 160, 82, 0.2);
+            color: #FFFFFF;
         }
 
         .btn-header-contact {
-            background: #FAF8F5;
-            color: #20002C;
-            text-decoration: none;
-            padding: 8px 18px;
-            font-size: 0.86rem;
+            background: var(--gold-accent);
+            color: #1A0024;
             font-weight: 600;
+            font-size: 0.88rem;
+            padding: 9px 20px;
             border-radius: var(--radius-btn);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             transition: all var(--transition);
         }
 
         .btn-header-contact:hover {
-            background: var(--gold-accent);
-            color: #FAF8F5;
+            background: var(--gold-light, #D8B464);
+            transform: translateY(-1px);
+        }
+
+        .mobile-hamburger {
+            display: none;
+            background: transparent;
+            border: none;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: 6px;
+        }
+
+        .mobile-drawer {
+            display: none;
+            flex-direction: column;
+            background: #180022;
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(196, 160, 82, 0.2);
+            gap: 14px;
+        }
+
+        .mobile-drawer.open {
+            display: flex;
+        }
+
+        .mobile-drawer a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 6px 0;
         }
 
         /* Values Page Hero */
         .values-page-hero {
-            background: #20002C;
-            background-image: 
-                radial-gradient(circle at 18% 25%, rgba(175, 128, 54, 0.15) 0%, transparent 48%),
-                radial-gradient(circle at 82% 75%, rgba(45, 0, 64, 0.45) 0%, transparent 55%),
-                linear-gradient(180deg, #180022 0%, #20002C 100%);
-            padding: 140px 0 80px;
-            border-bottom: 1px solid rgba(175, 128, 54, 0.22);
+            background: 
+                radial-gradient(circle at 85% 15%, rgba(196, 160, 82, 0.16) 0%, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(88, 22, 122, 0.35) 0%, transparent 50%),
+                linear-gradient(170deg, #250035 0%, #12001A 100%);
+            padding: 85px 0 95px;
+            border-bottom: 1px solid rgba(196, 160, 82, 0.2);
             position: relative;
+            overflow: hidden;
+        }
+
+        .values-page-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 56px 56px;
+            pointer-events: none;
+            opacity: 0.8;
         }
 
         .values-hero-nav {
@@ -572,14 +623,15 @@
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="brand-wrapper" aria-label="E'lique Advisory Consulting">
-                    <span class="brand-title-fallback">E'lique</span>
+                    <img src="images/logo-white.png" alt="E'lique Advisory" class="brand-logo-img" onerror="this.src='public/images/logo-white.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('values-fallback-title').style.display='block'; };">
+                    <span id="values-fallback-title" class="brand-title-fallback" style="display: none;">E'lique</span>
                 </a>
 
                 <ul class="main-nav-links">
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#services">Practice Areas</a></li>
                     <li><a href="index.html#case-studies">Case-Studies</a></li>
-                    <li><a href="values.html" style="color: var(--gold-accent);">Values</a></li>
+                    <li><a href="values.html" class="active" style="color: var(--gold-accent);">Values</a></li>
                     <li><a href="index.html#footprint">Global Desks</a></li>
                     <li><a href="index.html#faq">FAQ</a></li>
                 </ul>
@@ -605,8 +657,29 @@
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-header-contact">
                         <span>Contact Us</span>
                     </a>
+
+                    <button type="button" class="mobile-hamburger" id="mobile-toggle" aria-label="Open Navigation">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div class="mobile-drawer" id="mobile-drawer">
+            <a href="index.html#about" class="m-link">About</a>
+            <a href="index.html#services" class="m-link">Practice Areas</a>
+            <a href="index.html#case-studies" class="m-link">Case-Studies</a>
+            <a href="values.html" class="m-link" style="color: var(--gold-accent);">Values</a>
+            <a href="index.html#footprint" class="m-link">Global Desks</a>
+            <a href="index.html#faq" class="m-link">FAQ</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-header-contact" style="justify-content: center; margin-top: 8px;">
+                Open Consultation Form
+            </a>
         </div>
     </header>
 
@@ -960,7 +1033,7 @@
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js?ver=3.1.1" defer></script>
 
-    <!-- Theme Toggle Script -->
+    <!-- Theme Toggle & Mobile Navigation Script -->
     <script>
         const themeBtn = document.getElementById('theme-toggle-btn');
         const sunIcon = document.getElementById('theme-sun-icon');
@@ -985,6 +1058,20 @@
                 sunIcon.style.display = 'none';
                 moonIcon.style.display = 'block';
             }
+        }
+
+        // Mobile drawer toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        if (mobileToggle && mobileDrawer) {
+            mobileToggle.addEventListener('click', () => {
+                mobileDrawer.classList.toggle('open');
+            });
+            mobileDrawer.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileDrawer.classList.remove('open');
+                });
+            });
         }
     </script>
 </body>
