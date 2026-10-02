@@ -1150,31 +1150,35 @@ h1, h2, h3, h4, .serif {
    ========================================================================== */
 .bottom-cta-banner {
     background: var(--bg-page);
-    padding: 60px 0 80px;
+    padding: 40px 0 60px;
     border-top: none;
+}
+
+.bottom-cta-banner .container {
+    padding: 0 16px;
 }
 
 .bottom-cta-card {
     position: relative;
     width: 100%;
     margin: 0 auto;
-    min-height: 330px;
-    border-radius: 22px;
+    min-height: 240px;
+    border-radius: 20px;
     overflow: hidden;
     background: #20002C url('../images/cta-card-bg-clean.png') center center / cover no-repeat;
-    padding: 68px 32px 64px;
+    padding: 42px 24px 38px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 20px 48px rgba(32, 0, 44, 0.22);
+    box-shadow: 0 16px 40px rgba(32, 0, 44, 0.22);
 }
 
 @media (max-width: 991px) {
     .bottom-cta-card {
-        min-height: 280px;
-        padding: 50px 24px;
+        min-height: 220px;
+        padding: 36px 20px;
     }
 }
 
