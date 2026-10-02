@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#20002C">
 
-    <title>Our Values in Practice – E'lique Advisory Consulting</title>
-    <meta name="description" content="Values we live by, not ones we aspire to. The seven core values of E'lique Advisory Consulting and what each one means in practice.">
+    <title>Our Values in Practice – E'lique Advisory</title>
+    <meta name="description" content="Values we live by, not ones we aspire to. The seven core values of E'lique Advisory and what each one means in practice.">
 
     <!-- OpenGraph / Social Metadata -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Our Values in Practice – E'lique Advisory Consulting">
+    <meta property="og:title" content="Our Values in Practice – E'lique Advisory">
     <meta property="og:description" content="Values we live by, not ones we aspire to. Seven values, held in our work, in our relationships and in our lives.">
 
     <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
@@ -19,8 +19,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="public/images/favicon.png">
-    <link rel="shortcut icon" href="public/favicon.ico">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
 
     <style>
         /* CSS Reset & Variables */
@@ -39,8 +39,8 @@
             --font-serif: 'Cormorant Garamond', Georgia, serif;
             --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
             --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            --radius-btn: 3px;
-            --radius-card: 6px;
+            --radius-btn: 4px;
+            --radius-card: 8px;
         }
 
         [data-theme="dark-full"] {
@@ -56,6 +56,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -102,15 +106,15 @@
 
         .section-eyebrow {
             display: inline-block;
-            font-size: 0.76rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            color: var(--gold-accent);
+            font-size: 0.75rem;
             text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+            color: var(--gold-accent);
             margin-bottom: 12px;
         }
 
-        /* Header Navigation */
+        /* Header */
         .site-header {
             position: sticky;
             top: 0;
@@ -118,7 +122,7 @@
             background: rgba(32, 0, 44, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(196, 160, 82, 0.2);
+            border-bottom: 1px solid rgba(175, 128, 54, 0.2);
         }
 
         .header-inner {
@@ -138,7 +142,7 @@
         .brand-logo-img {
             height: 38px;
             width: auto;
-            display: block;
+            object-fit: contain;
         }
 
         .brand-title-fallback {
@@ -177,7 +181,7 @@
 
         .theme-toggle-btn {
             background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(196, 160, 82, 0.3);
+            border: 1px solid rgba(175, 128, 54, 0.3);
             border-radius: var(--radius-btn);
             color: var(--gold-accent);
             width: 36px;
@@ -190,7 +194,7 @@
         }
 
         .theme-toggle-btn:hover {
-            background: rgba(196, 160, 82, 0.2);
+            background: rgba(175, 128, 54, 0.2);
             color: #FFFFFF;
         }
 
@@ -209,7 +213,7 @@
         }
 
         .btn-header-contact:hover {
-            background: var(--gold-light, #D8B464);
+            background: var(--gold-light);
             transform: translateY(-1px);
         }
 
@@ -227,7 +231,7 @@
             flex-direction: column;
             background: #180022;
             padding: 20px 24px;
-            border-bottom: 1px solid rgba(196, 160, 82, 0.2);
+            border-bottom: 1px solid rgba(175, 128, 54, 0.2);
             gap: 14px;
         }
 
@@ -244,26 +248,15 @@
 
         /* Values Page Hero */
         .values-page-hero {
-            background: 
-                radial-gradient(circle at 85% 15%, rgba(196, 160, 82, 0.16) 0%, transparent 45%),
-                radial-gradient(circle at 15% 85%, rgba(88, 22, 122, 0.35) 0%, transparent 50%),
-                linear-gradient(170deg, #250035 0%, #12001A 100%);
-            padding: 85px 0 95px;
-            border-bottom: 1px solid rgba(196, 160, 82, 0.2);
+            background: #20002C;
+            background-image: 
+                radial-gradient(circle at 18% 25%, rgba(175, 128, 54, 0.15) 0%, transparent 48%),
+                radial-gradient(circle at 82% 75%, rgba(45, 0, 64, 0.45) 0%, transparent 55%),
+                linear-gradient(180deg, #180022 0%, #20002C 100%);
+            padding: 130px 0 75px;
+            border-bottom: 1px solid rgba(175, 128, 54, 0.22);
             position: relative;
             overflow: hidden;
-        }
-
-        .values-page-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 56px 56px;
-            pointer-events: none;
-            opacity: 0.8;
         }
 
         .values-hero-nav {
@@ -286,6 +279,10 @@
             transform: translateX(-4px);
         }
 
+        .values-hero-content {
+            max-width: 880px;
+        }
+
         .values-hero-title {
             font-family: var(--font-serif);
             font-size: clamp(2.6rem, 5vw, 4.2rem);
@@ -296,21 +293,79 @@
         }
 
         .values-hero-lead {
-            font-size: clamp(1.05rem, 2vw, 1.22rem);
-            color: rgba(250, 248, 245, 0.85);
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: rgba(250, 248, 245, 0.88);
             line-height: 1.7;
-            max-width: 760px;
+            max-width: 780px;
         }
 
-        /* Detail Section */
+        /* Short Jump Menu */
+        .values-jump-nav {
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(175, 128, 54, 0.2);
+        }
+
+        .values-jump-nav-label {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+            margin-bottom: 12px;
+        }
+
+        .values-jump-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .values-jump-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(196, 160, 82, 0.28);
+            color: #FAF8F5;
+            padding: 8px 16px;
+            border-radius: var(--radius-btn);
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .values-jump-link:hover {
+            background: var(--gold-accent);
+            color: #180022;
+            border-color: var(--gold-accent);
+            transform: translateY(-2px);
+        }
+
+        .values-jump-link span.jump-num {
+            font-family: var(--font-serif);
+            color: var(--gold-accent);
+            font-weight: 700;
+        }
+
+        .values-jump-link:hover span.jump-num {
+            color: #180022;
+        }
+
+        /* Values Detail Section */
         .values-detail-section {
-            padding: 80px 0 120px;
+            background-color: var(--bg-warm-creamy);
+            padding: 90px 0 120px;
+            transition: background-color var(--transition);
         }
 
         .values-detail-list {
             display: flex;
             flex-direction: column;
-            gap: 36px;
+            gap: 40px;
             max-width: 920px;
             margin: 0 auto;
         }
@@ -319,9 +374,11 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-card);
-            padding: 44px;
+            padding: 48px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+            position: relative;
+            scroll-margin-top: 100px;
         }
 
         .value-detail-card:hover {
@@ -332,10 +389,10 @@
 
         .value-card-header {
             display: flex;
-            align-items: flex-start;
-            gap: 22px;
+            align-items: center;
+            gap: 20px;
             margin-bottom: 24px;
-            padding-bottom: 20px;
+            padding-bottom: 18px;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -357,78 +414,85 @@
 
         .value-card-heading {
             font-family: var(--font-serif);
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-size: clamp(2rem, 3.2vw, 2.5rem);
             color: var(--text-heading);
-            margin: 0 0 6px;
+            margin: 0;
             font-weight: 600;
         }
 
-        .value-card-tagline {
-            font-size: 1.05rem;
-            color: var(--gold-accent);
-            font-style: italic;
+        /* 1. Tagline: Highest prominence in the hierarchy */
+        .value-prominent-tagline {
             font-family: var(--font-serif);
-            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--gold-accent);
+            line-height: 1.35;
+            margin-bottom: 16px;
         }
 
-        .value-card-desc {
+        /* 2. Paragraph: Short explanatory body */
+        .value-card-body-paragraph {
             font-size: 1.05rem;
             line-height: 1.8;
             color: var(--text-body);
-            margin: 0 0 24px;
+            margin-bottom: 24px;
         }
 
-        .value-scripture-box {
-            background: rgba(175, 128, 54, 0.05);
-            border: 1px solid rgba(175, 128, 54, 0.22);
-            border-left: 4px solid var(--gold-accent);
-            border-radius: 4px;
-            padding: 24px 28px;
-            margin-top: 20px;
+        /* 3. "For you" line: Stands out with brand gold accent */
+        .value-for-you-box {
+            margin: 26px 0;
+            padding: 16px 22px;
+            background: rgba(196, 160, 82, 0.09);
+            border-left: 3px solid var(--gold-accent);
+            border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
 
-        .scripture-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.75rem;
+        .value-for-you-label {
+            font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--gold-accent);
-            margin-bottom: 12px;
         }
 
-        .scripture-quote {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            line-height: 1.6;
+        .value-for-you-text {
+            font-size: 1rem;
+            font-weight: 600;
             color: var(--text-heading);
+            line-height: 1.5;
+        }
+
+        /* 4. Scripture quote: Smaller, muted colour, in italics, with reference underneath */
+        .value-scripture-container {
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .value-scripture-quote {
+            font-size: 0.92rem;
             font-style: italic;
-            margin: 0 0 14px;
-        }
-
-        .scripture-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 12px;
-            font-size: 0.9rem;
-        }
-
-        .scripture-ref {
-            font-weight: 700;
-            color: var(--gold-accent);
-            font-style: normal;
-        }
-
-        .scripture-reflection {
             color: var(--text-muted);
-            font-size: 0.88rem;
+            line-height: 1.65;
+            margin-bottom: 6px;
         }
 
+        .value-scripture-ref {
+            display: inline-block;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-style: normal;
+            letter-spacing: 0.02em;
+        }
+
+        /* Values CTA Banner */
         .values-cta-box {
-            margin-top: 60px;
+            margin-top: 70px;
             background: #20002C;
             border: 1px solid rgba(175, 128, 54, 0.35);
             border-radius: var(--radius-card);
@@ -465,11 +529,11 @@
         }
 
         .btn-primary-card {
-            background: #FAF8F5;
-            color: #20002C;
-            padding: 12px 26px;
-            font-size: 0.95rem;
+            background: var(--gold-accent);
+            color: #1A0024;
             font-weight: 600;
+            font-size: 0.95rem;
+            padding: 13px 26px;
             border-radius: var(--radius-btn);
             text-decoration: none;
             display: inline-flex;
@@ -479,8 +543,7 @@
         }
 
         .btn-primary-card:hover {
-            background: var(--gold-accent);
-            color: #FAF8F5;
+            background: var(--gold-light);
             transform: translateY(-2px);
         }
 
@@ -552,45 +615,8 @@
             justify-content: space-between;
             font-size: 0.85rem;
             color: #7E7485;
-        }
-
-        /* Floating Concierge Widgets */
-        .whatsapp-concierge {
-            position: fixed;
-            bottom: 24px;
-            left: 24px;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .whatsapp-icon-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #25D366;
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            transition: transform var(--transition);
-        }
-
-        .whatsapp-concierge:hover .whatsapp-icon-btn {
-            transform: scale(1.08);
-        }
-
-        .whatsapp-bubble {
-            background: #FFFFFF;
-            color: #20002C;
-            padding: 8px 14px;
-            border-radius: 18px;
-            font-size: 0.82rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-            border: 1px solid #E6E0D4;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
         /* GTranslate Floating Switcher */
@@ -608,10 +634,12 @@
             font-weight: 600 !important;
         }
 
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .main-nav-links { display: none; }
-            .value-detail-card { padding: 28px 20px; }
-            .value-card-header { flex-direction: column; gap: 12px; }
+            .mobile-hamburger { display: block; }
+            .value-detail-card { padding: 32px 20px; }
+            .value-card-header { gap: 14px; }
             .values-cta-box { padding: 40px 24px; }
             .footer-grid { grid-template-columns: 1fr; }
         }
@@ -622,18 +650,17 @@
     <header class="site-header">
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="brand-wrapper" aria-label="E'lique Advisory Consulting">
+                <a href="index.html" class="brand-wrapper" aria-label="E'lique Advisory">
                     <img src="images/logo-white.png" alt="E'lique Advisory" class="brand-logo-img" onerror="this.src='public/images/logo-white.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('values-fallback-title').style.display='block'; };">
-                    <span id="values-fallback-title" class="brand-title-fallback" style="display: none;">E'lique</span>
+                    <span id="values-fallback-title" class="brand-title-fallback" style="display: none;">E'lique Advisory</span>
                 </a>
 
                 <ul class="main-nav-links">
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#services">Practice Areas</a></li>
-                    <li><a href="index.html#case-studies">Case-Studies</a></li>
-                    <li><a href="values.html" class="active" style="color: var(--gold-accent);">Values</a></li>
+                    <li><a href="values.html" class="active">Values</a></li>
                     <li><a href="index.html#footprint">Global Desks</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
 
                 <div class="header-controls">
@@ -654,8 +681,8 @@
                         </svg>
                     </button>
 
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-header-contact">
-                        <span>Contact Us</span>
+                    <a href="index.html#contact" class="btn-header-contact">
+                        <span>Get in touch</span>
                     </a>
 
                     <button type="button" class="mobile-hamburger" id="mobile-toggle" aria-label="Open Navigation">
@@ -673,12 +700,11 @@
         <div class="mobile-drawer" id="mobile-drawer">
             <a href="index.html#about" class="m-link">About</a>
             <a href="index.html#services" class="m-link">Practice Areas</a>
-            <a href="index.html#case-studies" class="m-link">Case-Studies</a>
             <a href="values.html" class="m-link" style="color: var(--gold-accent);">Values</a>
             <a href="index.html#footprint" class="m-link">Global Desks</a>
-            <a href="index.html#faq" class="m-link">FAQ</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-header-contact" style="justify-content: center; margin-top: 8px;">
-                Open Consultation Form
+            <a href="index.html#contact" class="m-link">Contact</a>
+            <a href="index.html#contact" class="btn-header-contact" style="justify-content: center; margin-top: 8px;">
+                Get in touch
             </a>
         </div>
     </header>
@@ -700,8 +726,22 @@
                 <span class="section-eyebrow">OUR VALUES IN PRACTICE</span>
                 <h1 class="values-hero-title">Values we live by, <br><span class="italic-gold">not ones we aspire to.</span></h1>
                 <p class="values-hero-lead">
-                    Seven values, held in our work, in our relationships and in our lives. They are the foundation of everything E’lique is, everyone we hire, and every relationship we build. There is no eighth, and none of these outranks another.
+                    Seven values, held in our work, our relationships and our lives. They are the foundation of everything E'lique is, and none of them outranks another. They are rooted in the scriptures that shaped our founder, and they guide how we serve clients of every background and belief.
                 </p>
+
+                <!-- Short jump menu near the top linking to all seven values -->
+                <nav class="values-jump-nav" aria-label="Jump to value">
+                    <span class="values-jump-nav-label">Jump to Value</span>
+                    <ul class="values-jump-list">
+                        <li><a href="#value-1" class="values-jump-link"><span class="jump-num">1.</span> Integrity</a></li>
+                        <li><a href="#value-2" class="values-jump-link"><span class="jump-num">2.</span> Ownership</a></li>
+                        <li><a href="#value-3" class="values-jump-link"><span class="jump-num">3.</span> Solutions Thinking</a></li>
+                        <li><a href="#value-4" class="values-jump-link"><span class="jump-num">4.</span> Relationships</a></li>
+                        <li><a href="#value-5" class="values-jump-link"><span class="jump-num">5.</span> Loyalty &amp; Dedication</a></li>
+                        <li><a href="#value-6" class="values-jump-link"><span class="jump-num">6.</span> Excellence</a></li>
+                        <li><a href="#value-7" class="values-jump-link"><span class="jump-num">7.</span> Accountability</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </section>
@@ -714,28 +754,22 @@
                 <article class="value-detail-card" id="value-1">
                     <div class="value-card-header">
                         <div class="value-card-num">1</div>
-                        <div class="value-card-title-group">
-                            <h2 class="value-card-heading">Integrity</h2>
-                            <p class="value-card-tagline">We do the right thing, especially when it’s hard.</p>
-                        </div>
+                        <h2 class="value-card-heading">Integrity</h2>
                     </div>
                     <div class="value-card-body">
-                        <p class="value-card-desc">Integrity is not a value we display on a wall. It is the lens through which every decision at E’lique is made. We are honest with our clients, our partners, and each other, not because it is always easy, but because it is always right. Our ethics are our compass. We hire people who live this way, not just at work but in life.</p>
-                        <div class="value-scripture-box">
-                            <div class="scripture-badge">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                </svg>
-                                <span>Scripture Foundation</span>
-                            </div>
-                            <blockquote class="scripture-quote">
-                                “The integrity of the upright guides them, but the unfaithful are destroyed by their duplicity.”
-                            </blockquote>
-                            <div class="scripture-meta">
-                                <cite class="scripture-ref">Proverbs 11:3</cite>
-                                <span class="scripture-reflection">Our ethics are our compass. This scripture confirms it has always been so.</span>
-                            </div>
+                        <!-- 1. Tagline -->
+                        <p class="value-prominent-tagline">We do the right thing, especially when it's hard.</p>
+                        <!-- 2. Paragraph (Body) -->
+                        <p class="value-card-body-paragraph">We are honest with our clients, our partners and each other, even when it is uncomfortable. Our ethics are the lens for every decision we make, not a statement on a wall.</p>
+                        <!-- 3. For you line -->
+                        <div class="value-for-you-box">
+                            <span class="value-for-you-label">For you</span>
+                            <div class="value-for-you-text">Advice you can trust, including when it isn't what you hoped to hear.</div>
+                        </div>
+                        <!-- 4. Scripture quote -->
+                        <div class="value-scripture-container">
+                            <blockquote class="value-scripture-quote">“The integrity of the upright guides them, but the unfaithful are destroyed by their duplicity.”</blockquote>
+                            <cite class="value-scripture-ref">Proverbs 11:3</cite>
                         </div>
                     </div>
                 </article>
@@ -744,28 +778,22 @@
                 <article class="value-detail-card" id="value-2">
                     <div class="value-card-header">
                         <div class="value-card-num">2</div>
-                        <div class="value-card-title-group">
-                            <h2 class="value-card-heading">Ownership</h2>
-                            <p class="value-card-tagline">We own our work, not just do it.</p>
-                        </div>
+                        <h2 class="value-card-heading">Ownership</h2>
                     </div>
                     <div class="value-card-body">
-                        <p class="value-card-desc">At E’lique, we do not just deliver work. We take full responsibility for it. Every person on our team is a self-starter who takes pride in what they produce. We never miss a deadline, because a deadline is not just a date on a calendar. It is a commitment to a client whose business depends on it. We understand that our work has real impact, positive or negative, on real people and real businesses. That responsibility is not a burden to us. It is what drives us. The people who thrive here treat every piece of work as if their name were on it, because it is.</p>
-                        <div class="value-scripture-box">
-                            <div class="scripture-badge">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                </svg>
-                                <span>Scripture Foundation</span>
-                            </div>
-                            <blockquote class="scripture-quote">
-                                “Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.”
-                            </blockquote>
-                            <div class="scripture-meta">
-                                <cite class="scripture-ref">Colossians 3:23</cite>
-                                <span class="scripture-reflection">Your name is on this work, and ultimately, so is His.</span>
-                            </div>
+                        <!-- 1. Tagline -->
+                        <p class="value-prominent-tagline">We own our work, not just do it.</p>
+                        <!-- 2. Paragraph (Body) -->
+                        <p class="value-card-body-paragraph">We take full responsibility for what we deliver. Every deadline is a commitment to a client whose business depends on it, and we treat each piece of work as if our name is on it, because it is.</p>
+                        <!-- 3. For you line -->
+                        <div class="value-for-you-box">
+                            <span class="value-for-you-label">For you</span>
+                            <div class="value-for-you-text">One accountable team that sees the work through.</div>
+                        </div>
+                        <!-- 4. Scripture quote -->
+                        <div class="value-scripture-container">
+                            <blockquote class="value-scripture-quote">“Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.”</blockquote>
+                            <cite class="value-scripture-ref">Colossians 3:23</cite>
                         </div>
                     </div>
                 </article>
@@ -774,28 +802,22 @@
                 <article class="value-detail-card" id="value-3">
                     <div class="value-card-header">
                         <div class="value-card-num">3</div>
-                        <div class="value-card-title-group">
-                            <h2 class="value-card-heading">Solutions Thinking</h2>
-                            <p class="value-card-tagline">We are curious by nature and relentless by choice.</p>
-                        </div>
+                        <h2 class="value-card-heading">Solutions Thinking</h2>
                     </div>
                     <div class="value-card-body">
-                        <p class="value-card-desc">At E’lique, challenges excite us, because we know that behind every problem is an opportunity to change someone’s story. We never accept no as a final answer. We ask better questions, seek new paths, and persist in the face of adversity. Clients come to us because they know we will always find a way forward, even when others could not. We see possibilities where others see walls. That is not just what we do. It is who we are.</p>
-                        <div class="value-scripture-box">
-                            <div class="scripture-badge">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                </svg>
-                                <span>Scripture Foundation</span>
-                            </div>
-                            <blockquote class="scripture-quote">
-                                “I can do all things through Christ who strengthens me. Call to me and I will answer you and tell you great and unsearchable things you do not know.”
-                            </blockquote>
-                            <div class="scripture-meta">
-                                <cite class="scripture-ref">Philippians 4:13 &amp; Jeremiah 33:3</cite>
-                                <span class="scripture-reflection">No wall is too high. No problem too complex. We ask, we seek, we find.</span>
-                            </div>
+                        <!-- 1. Tagline -->
+                        <p class="value-prominent-tagline">Curious by nature, relentless by choice.</p>
+                        <!-- 2. Paragraph (Body) -->
+                        <p class="value-card-body-paragraph">Behind every challenge is an opportunity to change someone's story. We ask better questions, look for new paths and keep going when the obvious answer runs out.</p>
+                        <!-- 3. For you line -->
+                        <div class="value-for-you-box">
+                            <span class="value-for-you-label">For you</span>
+                            <div class="value-for-you-text">When others see a wall, we look for the way through.</div>
+                        </div>
+                        <!-- 4. Scripture quote -->
+                        <div class="value-scripture-container">
+                            <blockquote class="value-scripture-quote">“Call to me and I will answer you and tell you great and unsearchable things you do not know.”</blockquote>
+                            <cite class="value-scripture-ref">Jeremiah 33:3</cite>
                         </div>
                     </div>
                 </article>
@@ -804,28 +826,22 @@
                 <article class="value-detail-card" id="value-4">
                     <div class="value-card-header">
                         <div class="value-card-num">4</div>
-                        <div class="value-card-title-group">
-                            <h2 class="value-card-heading">Relationships</h2>
-                            <p class="value-card-tagline">Relationships are our greatest asset.</p>
-                        </div>
+                        <h2 class="value-card-heading">Relationships</h2>
                     </div>
                     <div class="value-card-body">
-                        <p class="value-card-desc">At E’lique, relationships are not a strategy. They are our wealth. We have seen what happens when people connect around shared values and shared purpose. Resources flow, doors open, and impact multiplies in ways that money alone could never buy. We partner with people and organisations who believe what we believe, that business should do good while doing well. We invest in every relationship with care, with honesty, and with a long view. Like a vine and a tree, we grow together, and in time, we become inseparable.</p>
-                        <div class="value-scripture-box">
-                            <div class="scripture-badge">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                </svg>
-                                <span>Scripture Foundation</span>
-                            </div>
-                            <blockquote class="scripture-quote">
-                                “Two are better than one because they have a good return for their labour. If either of them falls down, one can help the other up.”
-                            </blockquote>
-                            <div class="scripture-meta">
-                                <cite class="scripture-ref">Ecclesiastes 4:9-10</cite>
-                                <span class="scripture-reflection">Like a vine and a tree, we grow together. This is ancient wisdom.</span>
-                            </div>
+                        <!-- 1. Tagline -->
+                        <p class="value-prominent-tagline">Relationships are our greatest asset.</p>
+                        <!-- 2. Paragraph (Body) -->
+                        <p class="value-card-body-paragraph">For us, relationships are not a strategy. They are our wealth. We partner with people and organisations who believe business should do good while doing well, and we invest in each relationship with care, honesty and a long view.</p>
+                        <!-- 3. For you line -->
+                        <div class="value-for-you-box">
+                            <span class="value-for-you-label">For you</span>
+                            <div class="value-for-you-text">A partner invested in your long-term success, not just the engagement.</div>
+                        </div>
+                        <!-- 4. Scripture quote -->
+                        <div class="value-scripture-container">
+                            <blockquote class="value-scripture-quote">“Two are better than one because they have a good return for their labour. If either of them falls down, one can help the other up.”</blockquote>
+                            <cite class="value-scripture-ref">Ecclesiastes 4:9-10</cite>
                         </div>
                     </div>
                 </article>
@@ -834,28 +850,22 @@
                 <article class="value-detail-card" id="value-5">
                     <div class="value-card-header">
                         <div class="value-card-num">5</div>
-                        <div class="value-card-title-group">
-                            <h2 class="value-card-heading">Loyalty and Dedication</h2>
-                            <p class="value-card-tagline">We measure loyalty in presence, not years.</p>
-                        </div>
+                        <h2 class="value-card-heading">Loyalty and Dedication</h2>
                     </div>
                     <div class="value-card-body">
-                        <p class="value-card-desc">At E’lique, we believe that people and partnerships exist for seasons. Some short, some long, all purposeful. We do not measure loyalty in years. We measure it in how fully you show up for the time you are here. We ask one thing of every person who joins us: be sold out to the vision for as long as you are here. Give this season everything you have. Grow from it. Leave your mark on it. And when your season ends, leave knowing you gave E’lique, and yourself, your very best.</p>
-                        <div class="value-scripture-box">
-                            <div class="scripture-badge">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                </svg>
-                                <span>Scripture Foundation</span>
-                            </div>
-                            <blockquote class="scripture-quote">
-                                “There is a time for everything, and a season for every activity under the heavens.”
-                            </blockquote>
-                            <div class="scripture-meta">
-                                <cite class="scripture-ref">Ecclesiastes 3:1</cite>
-                                <span class="scripture-reflection">The seasons’ philosophy is not a business idea. It is a biblical truth.</span>
-                            </div>
+                        <!-- 1. Tagline -->
+                        <p class="value-prominent-tagline">We measure loyalty in presence, not years.</p>
+                        <!-- 2. Paragraph (Body) -->
+                        <p class="value-card-body-paragraph">We give our full commitment to every client and colleague for as long as we work together. Presence, effort and follow-through matter more than tenure.</p>
+                        <!-- 3. For you line -->
+                        <div class="value-for-you-box">
+                            <span class="value-for-you-label">For you</span>
+                            <div class="value-for-you-text">Our full attention for the whole engagement, not just the start.</div>
+                        </div>
+                        <!-- 4. Scripture quote -->
+                        <div class="value-scripture-container">
+                            <blockquote class="value-scripture-quote">“There is a time for everything, and a season for every activity under the heavens.”</blockquote>
+                            <cite class="value-scripture-ref">Ecclesiastes 3:1</cite>
                         </div>
                     </div>
                 </article>
@@ -864,28 +874,22 @@
                 <article class="value-detail-card" id="value-6">
                     <div class="value-card-header">
                         <div class="value-card-num">6</div>
-                        <div class="value-card-title-group">
-                            <h2 class="value-card-heading">Excellence</h2>
-                            <p class="value-card-tagline">Good enough is never enough.</p>
-                        </div>
+                        <h2 class="value-card-heading">Excellence</h2>
                     </div>
                     <div class="value-card-body">
-                        <p class="value-card-desc">Everything that carries the E’lique name carries a standard with it. We are a firm that lives in the details, because we know that accuracy, care, and thoroughness are what separate good work from exceptional work. We do not aim to be second best. We are here to be distinct, to leave a mark that is immediately recognizable as E’lique’s. For our clients, that means every deliverable, every interaction, and every outcome reflects the highest standard we are capable of. Not sometimes. Every time.</p>
-                        <div class="value-scripture-box">
-                            <div class="scripture-badge">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                </svg>
-                                <span>Scripture Foundation</span>
-                            </div>
-                            <blockquote class="scripture-quote">
-                                “Do you see someone skilled in their work? They will serve before kings; they will not serve before officials of low rank.”
-                            </blockquote>
-                            <div class="scripture-meta">
-                                <cite class="scripture-ref">Proverbs 22:29</cite>
-                                <span class="scripture-reflection">Excellence is not pride. It is the standard that opens doors.</span>
-                            </div>
+                        <!-- 1. Tagline -->
+                        <p class="value-prominent-tagline">Good enough is never enough.</p>
+                        <!-- 2. Paragraph (Body) -->
+                        <p class="value-card-body-paragraph">We live in the details, because accuracy, care and thoroughness separate good work from exceptional work. Everything that carries the E'lique name carries the same standard.</p>
+                        <!-- 3. For you line -->
+                        <div class="value-for-you-box">
+                            <span class="value-for-you-label">For you</span>
+                            <div class="value-for-you-text">Deliverables you can put in front of your board, your investors or your regulator.</div>
+                        </div>
+                        <!-- 4. Scripture quote -->
+                        <div class="value-scripture-container">
+                            <blockquote class="value-scripture-quote">“Do you see someone skilled in their work? They will serve before kings; they will not serve before officials of low rank.”</blockquote>
+                            <cite class="value-scripture-ref">Proverbs 22:29</cite>
                         </div>
                     </div>
                 </article>
@@ -894,28 +898,22 @@
                 <article class="value-detail-card" id="value-7">
                     <div class="value-card-header">
                         <div class="value-card-num">7</div>
-                        <div class="value-card-title-group">
-                            <h2 class="value-card-heading">Accountability</h2>
-                            <p class="value-card-tagline">Accountability is the doorway to growth.</p>
-                        </div>
+                        <h2 class="value-card-heading">Accountability</h2>
                     </div>
                     <div class="value-card-body">
-                        <p class="value-card-desc">At E’lique, we take full responsibility for our actions with our clients, with each other, and with ourselves. When things go wrong, we do not deflect or assign blame. We reflect. We ask what we could have done better. And we grow from it. Accountability is not a culture we enforce here. It is a value we live by. Because the people who thrive at E’lique are the ones who are brave enough to hold the mirror up to themselves.</p>
-                        <div class="value-scripture-box">
-                            <div class="scripture-badge">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                </svg>
-                                <span>Scripture Foundation</span>
-                            </div>
-                            <blockquote class="scripture-quote">
-                                “Search me, God, and know my heart; test me and know my anxious thoughts. See if there is any offensive way in me.”
-                            </blockquote>
-                            <div class="scripture-meta">
-                                <cite class="scripture-ref">Psalm 139:23-24</cite>
-                                <span class="scripture-reflection">Accountability begins with the courage to look inward. David understood this.</span>
-                            </div>
+                        <!-- 1. Tagline -->
+                        <p class="value-prominent-tagline">Accountability is the doorway to growth.</p>
+                        <!-- 2. Paragraph (Body) -->
+                        <p class="value-card-body-paragraph">When things go wrong, we do not deflect. We reflect, ask what we could have done better and grow from it. It takes courage to hold the mirror up to ourselves.</p>
+                        <!-- 3. For you line -->
+                        <div class="value-for-you-box">
+                            <span class="value-for-you-label">For you</span>
+                            <div class="value-for-you-text">We tell you when something has gone wrong and what we are doing about it.</div>
+                        </div>
+                        <!-- 4. Scripture quote -->
+                        <div class="value-scripture-container">
+                            <blockquote class="value-scripture-quote">“Search me, God, and know my heart; test me and know my anxious thoughts. See if there is any offensive way in me.”</blockquote>
+                            <cite class="value-scripture-ref">Psalm 139:23-24</cite>
                         </div>
                     </div>
                 </article>
@@ -930,10 +928,12 @@
                         Whether you are scaling across borders, structuring a complex corporate transaction, or navigating regulatory shifts, our advisory team is ready.
                     </p>
                     <div class="values-cta-actions">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary-card">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
+                        <a href="index.html#contact" class="btn-primary-card">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                <line x1="8" y1="10" x2="8.01" y2="10" stroke-width="2.5"></line>
+                                <line x1="12" y1="10" x2="12.01" y2="10" stroke-width="2.5"></line>
+                                <line x1="16" y1="10" x2="16.01" y2="10" stroke-width="2.5"></line>
                             </svg>
                             <span>Start a Conversation</span>
                         </a>
@@ -963,8 +963,8 @@
                     <ul>
                         <li><a href="index.html#about">About Us</a></li>
                         <li><a href="values.html">Our Values</a></li>
-                        <li><a href="index.html#case-studies">Case Studies</a></li>
-                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="index.html#services">Practice Areas</a></li>
+                        <li><a href="index.html#contact">Get in Touch</a></li>
                     </ul>
                 </div>
 
@@ -972,47 +972,34 @@
                     <h4>Practice Areas</h4>
                     <ul>
                         <li><a href="index.html#services">Strategy & Growth</a></li>
-                        <li><a href="index.html#services">Digital & AI</a></li>
                         <li><a href="index.html#services">CFO & Cloud Accounting</a></li>
+                        <li><a href="index.html#services">Digital & AI</a></li>
                         <li><a href="index.html#services">Tax & Global Mobility</a></li>
-                        <li><a href="index.html#services">Risk & Governance</a></li>
+                        <li><a href="index.html#services">Risk, Governance & Compliance</a></li>
+                        <li><a href="index.html#services">People & Capability</a></li>
+                        <li><a href="index.html#services">Public Sector & Government</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Offices</h4>
                     <ul>
-                        <li><span style="color: #FAF8F5; font-weight: 500;">Johannesburg & Kimberley</span></li>
+                        <li><span style="color: #FAF8F5; font-weight: 500;">Johannesburg</span></li>
                         <li><span style="color: #FAF8F5; font-weight: 500;">London</span></li>
-                        <li><span style="color: #FAF8F5; font-weight: 500;">New York</span></li>
                         <li><span style="color: #FAF8F5; font-weight: 500;">Accra</span></li>
-                        <li><span style="color: #FAF8F5; font-weight: 500;">Dubai</span></li>
-                        <li><span style="color: #FAF8F5; font-weight: 500;">Singapore</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 E'lique Advisory Consulting. All rights reserved.</div>
+                <div>&copy; 2026 E'lique Advisory. All rights reserved.</div>
                 <div style="display: flex; gap: 18px;">
-                    <a href="mailto:info@eliqueadvisory.com" style="color: inherit; text-decoration: none;">info@eliqueadvisory.com</a>
+                    <a href="mailto:enquiries@eliqueadvisory.com" style="color: inherit; text-decoration: none;">enquiries@eliqueadvisory.com</a>
                     <a href="tel:+27767032038" style="color: inherit; text-decoration: none;">+27 76 703 2038</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- WhatsApp Concierge Floating Widget -->
-    <a href="https://api.whatsapp.com/send?phone=27767032938&text=Hi%20there!%20E%27liquue%20Advisory%20is%20here%20to%20help%20you." target="_blank" rel="noopener noreferrer" class="whatsapp-concierge" aria-label="Chat on WhatsApp">
-        <div class="whatsapp-icon-btn">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zM8.53 7.33c-.2 0-.44.08-.66.32-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.13.17 1.76 2.68 4.25 3.77.59.26 1.05.41 1.41.53.6.19 1.15.16 1.58.1.48-.07 1.48-.6 1.69-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.49-.3-.26-.13-1.48-.73-1.71-.82-.23-.08-.4-.13-.56.13-.17.25-.66.82-.81.99-.15.17-.3.19-.56.06-.26-.13-1.11-.41-2.11-1.3-.78-.7-1.31-1.56-1.46-1.82-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.16.17-.26.26-.44.09-.17.04-.33-.02-.46-.07-.13-.59-1.42-.81-1.95-.21-.51-.43-.44-.59-.45-.15-.01-.33-.01-.52-.01z"/>
-            </svg>
-        </div>
-        <div class="whatsapp-bubble">
-            Need Help? <strong>Chat with us</strong>
-        </div>
-    </a>
 
     <!-- Authentic GTranslate Real-time Multilingual Widget -->
     <div class="gtranslate_wrapper" id="gt-wrapper-48405205"></div>
@@ -1043,20 +1030,22 @@
         const currentTheme = localStorage.getItem('elique_theme') || 'light';
         applyTheme(currentTheme);
 
-        themeBtn.addEventListener('click', () => {
-            const newTheme = htmlRoot.getAttribute('data-theme') === 'dark-full' ? 'light' : 'dark-full';
-            applyTheme(newTheme);
-            localStorage.setItem('elique_theme', newTheme);
-        });
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                const newTheme = htmlRoot.getAttribute('data-theme') === 'dark-full' ? 'light' : 'dark-full';
+                applyTheme(newTheme);
+                localStorage.setItem('elique_theme', newTheme);
+            });
+        }
 
         function applyTheme(theme) {
             htmlRoot.setAttribute('data-theme', theme);
             if (theme === 'dark-full') {
-                sunIcon.style.display = 'block';
-                moonIcon.style.display = 'none';
+                if (sunIcon) sunIcon.style.display = 'block';
+                if (moonIcon) moonIcon.style.display = 'none';
             } else {
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
+                if (sunIcon) sunIcon.style.display = 'none';
+                if (moonIcon) moonIcon.style.display = 'block';
             }
         }
 

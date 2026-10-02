@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#20002C">
 
-    <title>E'lique Advisory Consulting – Built to Last. Ahead by Design.</title>
+    <title>E'lique Advisory – Built to Last. Ahead by Design.</title>
     <meta name="description" content="We partner with ambitious businesses to build organisations that are scalable, resilient, and future-ready. Built in Africa · Operating Globally.">
 
     <!-- OpenGraph Metadata -->
-    <meta property="og:title" content="E'lique Advisory Consulting – Built to Last. Ahead by Design.">
+    <meta property="og:title" content="E'lique Advisory – Built to Last. Ahead by Design.">
     <meta property="og:description" content="We partner with ambitious businesses to build organisations that are scalable, resilient, and future-ready. Built in Africa · Operating Globally.">
     <meta property="og:type" content="website">
 
@@ -23,7 +23,7 @@
 
     <style>
         /* ==========================================================================
-           E'lique Advisory Consulting - Humanized Executive Design System
+           E'lique Advisory - Executive Design System
            Built to Last. Ahead by Design.
            ========================================================================== */
 
@@ -47,8 +47,8 @@
             --header-text: #FFFFFF;
             --font-serif: 'Cormorant Garamond', Georgia, serif;
             --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius-btn: 6px;
-            --radius-card: 14px;
+            --radius-btn: 4px;
+            --radius-card: 10px;
             --transition: 0.25s ease;
         }
 
@@ -87,7 +87,6 @@
 
         body {
             background-color: var(--bg-page);
-            /* Elevated architectural atmosphere — subtle champagne warmth & depth over ivory base */
             background-image:
                 radial-gradient(ellipse 90% 60% at 50% 0%, rgba(196, 160, 82, 0.08) 0%, transparent 60%),
                 radial-gradient(circle at 12% 28%, rgba(32, 0, 44, 0.035) 0%, transparent 40%),
@@ -104,7 +103,6 @@
             transition: background-color var(--transition), color var(--transition);
         }
 
-        /* Dark mode: rich plum & obsidian atmosphere with warm gold accents */
         [data-theme="dark-full"] body {
             background-color: #110017;
             background-image:
@@ -210,7 +208,6 @@
             gap: 14px;
         }
 
-        /* Theme Toggle Button */
         .theme-toggle-btn {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(196, 160, 82, 0.3);
@@ -230,7 +227,6 @@
             color: #FFFFFF;
         }
 
-        /* Contact Us Button on Navbar */
         .btn-header-contact {
             background: var(--gold-accent);
             color: #1A0024;
@@ -279,31 +275,68 @@
             padding: 6px 0;
         }
 
-        /* ==========================================================================
-           1. HERO SECTION
-           ========================================================================== */
+        /* 1. HERO SECTION (BCG-Inspired Executive Layout) */
         .hero-section {
-            background: 
+            background:
                 radial-gradient(circle at 85% 15%, rgba(196, 160, 82, 0.16) 0%, transparent 45%),
                 radial-gradient(circle at 15% 85%, rgba(88, 22, 122, 0.35) 0%, transparent 50%),
                 linear-gradient(170deg, #250035 0%, #12001A 100%);
             color: #FFFFFF;
-            padding: 85px 0 95px;
+            padding: 95px 0 105px;
             position: relative;
             border-bottom: 1px solid var(--header-border);
             overflow: hidden;
         }
 
-        .hero-section::before {
-            content: "";
+        .hero-ambient-canvas {
             position: absolute;
-            inset: 0;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 56px 56px;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
             pointer-events: none;
-            opacity: 0.8;
+            z-index: 1;
+            opacity: 0.95;
+            mix-blend-mode: screen;
+            filter: blur(48px);
+            -webkit-filter: blur(48px);
+            transform: translateZ(0);
+        }
+
+        .hero-section > .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-media-controls {
+            position: absolute;
+            bottom: 24px;
+            right: 28px;
+            z-index: 15;
+        }
+
+        .hero-pause-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-btn);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(196, 160, 82, 0.35);
+            color: #FAF8F5;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-pause-btn:hover {
+            background: rgba(196, 160, 82, 0.25);
+            border-color: var(--gold-accent);
+            color: var(--gold-accent);
+            transform: scale(1.06);
         }
 
         .hero-africa-eyebrow {
@@ -336,7 +369,7 @@
         .hero-paragraph {
             font-size: clamp(1.05rem, 1.8vw, 1.25rem);
             color: rgba(255, 255, 255, 0.88);
-            max-width: 650px;
+            max-width: 660px;
             line-height: 1.65;
             margin-bottom: 38px;
             font-weight: 400;
@@ -387,214 +420,55 @@
             color: var(--gold-accent);
         }
 
-        /* ==========================================================================
-           2. METRICS & STATS SECTION
-           ========================================================================== */
-        .stats-section {
-            background: var(--bg-page-alt);
-            padding: 60px 0;
-            border-bottom: 1px solid var(--bg-card-border);
-        }
-
-        .stats-layout {
-            display: grid;
-            grid-template-columns: 1.1fr 2fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .stats-intro-title {
-            font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-            color: var(--text-heading);
-            line-height: 1.25;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .stat-box {
-            position: relative;
-            padding: 0 16px;
-        }
-
-        .stat-box:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 15%;
-            height: 70%;
-            width: 1px;
-            background: var(--bg-card-border);
-        }
-
-        .stat-number {
-            font-family: var(--font-serif);
-            font-size: clamp(2.4rem, 3.2vw, 3.2rem);
-            color: var(--text-heading);
-            font-weight: 500;
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .stat-label {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        /* ==========================================================================
-           3. VALUES SECTION
-           ========================================================================== */
-        .values-section {
-            padding: 85px 0;
-            background: var(--bg-page);
-        }
-
-        .values-header {
-            display: grid;
-            grid-template-columns: 1.2fr 1.2fr;
-            gap: 40px;
-            align-items: flex-end;
-            margin-bottom: 60px;
-        }
-
-        .values-headline {
-            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
-            color: var(--text-heading);
-            line-height: 1.15;
-        }
-
-        .values-subtext {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 36px 30px;
-        }
-
-        .value-card {
-            border-bottom: 1px solid var(--bg-card-border);
-            padding-bottom: 24px;
-        }
-
-        .value-badge {
-            width: 34px;
-            height: 34px;
-            background: var(--bg-hero);
-            color: #FFFFFF;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-serif);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 18px;
-        }
-
-        .value-title {
-            font-size: 1.5rem;
-            color: var(--text-heading);
-            margin-bottom: 10px;
-        }
-
-        .value-description {
-            font-size: 0.95rem;
-            color: var(--text-body);
-            line-height: 1.6;
-        }
-
-        .value-highlight-card {
-            background: var(--bg-hero);
-            color: #FFFFFF;
-            border-radius: var(--radius-card);
-            padding: 32px 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .value-highlight-card h3 {
-            font-size: 1.8rem;
-            color: #FFFFFF;
-            line-height: 1.25;
-            margin-bottom: 20px;
-        }
-
-        .value-highlight-card a {
-            color: var(--gold-accent);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* ==========================================================================
-           4. PRACTICE AREAS (Tailored Color Palette)
-           ========================================================================== */
+        /* 2. PRACTICE AREAS (Immediately following Hero) */
         .practices-section {
-            padding: 100px 0;
-            background: var(--bg-page);
-            position: relative;
+            padding: 90px 0;
+            background: var(--bg-page-alt);
         }
 
         .practices-header {
-            max-width: 680px;
-            margin-bottom: 50px;
+            margin-bottom: 48px;
         }
 
         .practices-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-size: clamp(2.2rem, 3.5vw, 3rem);
             color: var(--text-heading);
-            margin-top: 12px;
-            line-height: 1.2;
         }
 
         .practices-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
         .practice-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-top: 4px solid var(--gold-accent);
+            border-top: 3px solid transparent;
             border-radius: var(--radius-card);
-            padding: 36px 30px;
+            padding: 38px 32px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 320px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
             transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
             position: relative;
         }
 
         .practice-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 36px rgba(32, 0, 44, 0.08);
-            border-color: var(--gold-accent);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 36px rgba(32, 0, 44, 0.09);
         }
 
-        /* Top Accent Colors */
-        .card-emerald { border-top-color: #0E6251; }
-        .card-plum    { border-top-color: #58167A; }
+        .card-emerald { border-top-color: #0F5B46; }
         .card-bronze  { border-top-color: #9B6F2D; }
+        .card-plum    { border-top-color: #58167A; }
         .card-navy    { border-top-color: #1A3C6B; }
         .card-terracotta { border-top-color: #963B2B; }
         .card-indigo  { border-top-color: #2D3A63; }
         .card-pine    { border-top-color: #1C543B; }
 
-        /* Refined geometric icon container */
         .practice-icon-box {
             width: 46px;
             height: 46px;
@@ -638,7 +512,14 @@
             color: var(--text-body);
             font-size: 0.94rem;
             line-height: 1.7;
-            margin-bottom: 26px;
+            margin-bottom: 16px;
+        }
+
+        .practice-card-tags {
+            font-size: 0.82rem;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .practice-card-link {
@@ -660,67 +541,119 @@
             gap: 12px;
         }
 
-        /* ==========================================================================
-           5. FEATURED CASE STUDY
-           ========================================================================== */
-        .case-study-section {
+        /* 3. VALUES SECTION (Follows Practice Areas) */
+        .values-section {
             padding: 90px 0;
             background: var(--bg-page);
         }
 
-        .case-study-card {
+        .values-header {
+            display: grid;
+            grid-template-columns: 1.2fr 1.2fr;
+            gap: 40px;
+            align-items: flex-end;
+            margin-bottom: 60px;
+        }
+
+        .values-headline {
+            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            color: var(--text-heading);
+            line-height: 1.15;
+        }
+
+        .values-subtext {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px 30px;
+        }
+
+        .value-card {
+            border-bottom: 1px solid var(--bg-card-border);
+            padding-bottom: 24px;
+        }
+
+        .value-badge {
+            width: 34px;
+            height: 34px;
             background: var(--bg-hero);
             color: #FFFFFF;
-            border-radius: var(--radius-card);
-            padding: 56px 48px;
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 48px;
+            border-radius: 4px;
+            display: flex;
             align-items: center;
-        }
-
-        .case-study-headline {
-            font-size: clamp(1.9rem, 3vw, 2.6rem);
-            line-height: 1.2;
-            margin-bottom: 16px;
-            color: #FFFFFF;
-        }
-
-        .case-study-sub {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .case-stat-block {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(196, 160, 82, 0.25);
-            border-radius: var(--radius-card);
-            padding: 44px 32px;
-            text-align: center;
-        }
-
-        .case-stat-big {
+            justify-content: center;
             font-family: var(--font-serif);
-            font-size: clamp(3.2rem, 5vw, 4.8rem);
-            color: var(--gold-accent);
-            font-weight: 700;
-            line-height: 1;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .value-title {
+            font-size: 1.45rem;
+            color: var(--text-heading);
             margin-bottom: 10px;
         }
 
-        .case-stat-caption {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #FFFFFF;
-            font-weight: 700;
+        .value-card-tagline-lead {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            line-height: 1.35;
+            margin-bottom: 8px;
         }
 
-        /* ==========================================================================
-           6. GLOBAL FOOTPRINT (With Originator National Flags)
-           ========================================================================== */
+        .value-card-body-text {
+            font-family: var(--font-sans);
+            font-size: 0.94rem;
+            color: var(--text-body);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .value-highlight-card {
+            background: var(--bg-hero);
+            color: #FFFFFF;
+            border-radius: var(--radius-card);
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .value-highlight-card.span-two-cols {
+            grid-column: span 2;
+        }
+
+        .value-highlight-card h3 {
+            font-size: 1.8rem;
+            color: #FFFFFF;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .value-highlight-card a {
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap var(--transition), color var(--transition);
+        }
+
+        .value-highlight-card a:hover {
+            color: #FFFFFF;
+            gap: 10px;
+        }
+
+        /* 4. GLOBAL FOOTPRINT (3 Countries) */
         .footprint-section {
             padding: 85px 0;
             background: var(--bg-page-alt);
@@ -784,9 +717,7 @@
             color: var(--text-muted);
         }
 
-        /* ==========================================================================
-           7. DIRECT LINES & GOOGLE FORM LEAD PIPELINE
-           ========================================================================== */
+        /* 5. CONTACT SECTION (BCG-Inspired Management Consulting Form) */
         .contact-section {
             padding: 90px 0;
             background: var(--bg-page);
@@ -795,21 +726,37 @@
         .contact-layout {
             display: grid;
             grid-template-columns: 1fr 1.25fr;
-            gap: 48px;
-            align-items: flex-start;
+            gap: 36px;
+            align-items: stretch;
         }
 
         .direct-lines-box {
             background: var(--bg-card);
-            border: 1px solid var(--bg-card-border);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-card);
-            padding: 40px 32px;
+            padding: 44px 38px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 32px rgba(0, 0, 0, 0.05);
+        }
+
+        .direct-lines-content-top {
+            margin-bottom: 24px;
+        }
+
+        .direct-items-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex: 1;
         }
 
         .direct-item {
-            margin-bottom: 28px;
-            padding-bottom: 22px;
-            border-bottom: 1px solid var(--bg-card-border);
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .direct-item:last-child {
@@ -846,166 +793,159 @@
             margin-top: 4px;
         }
 
-        /* Google Form Consultation Card */
-        .consultation-form-card {
-            background: var(--bg-hero);
-            color: #FFFFFF;
+        .contact-form-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-card);
-            padding: 44px 36px;
+            padding: 44px 38px;
+            box-shadow: 0 10px 32px rgba(0, 0, 0, 0.05);
         }
 
-        .consultation-form-card h2 {
+        .contact-form-heading {
             font-size: 2.2rem;
-            color: #FFFFFF;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
-
-        .consultation-form-card p {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .google-form-trigger-box {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid var(--gold-accent);
-            border-radius: var(--radius-btn);
-            padding: 30px 24px;
-            text-align: center;
-            margin-bottom: 26px;
-        }
-
-        .google-form-trigger-box h3 {
-            font-size: 1.4rem;
-            color: #FFFFFF;
+            color: var(--text-heading);
             margin-bottom: 8px;
+            font-family: var(--font-serif);
         }
 
-        .google-form-trigger-box p {
-            font-size: 0.92rem;
-            margin-bottom: 20px;
+        .contact-form-intro {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            line-height: 1.6;
         }
 
-        .btn-launch-google-form {
-            background: var(--gold-accent);
-            color: #180022;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 15px 32px;
-            border-radius: var(--radius-btn);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group-full {
+            grid-column: span 2;
+        }
+
+        .form-field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-label {
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            letter-spacing: 0.02em;
+        }
+
+        .form-input, .form-select, .form-textarea {
             width: 100%;
-            max-width: 380px;
+            padding: 12px 14px;
+            background: var(--bg-page);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-btn);
+            font-family: var(--font-sans);
+            font-size: 0.94rem;
+            color: var(--text-heading);
             transition: all var(--transition);
         }
 
-        .btn-launch-google-form:hover {
-            background: var(--gold-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(196, 160, 82, 0.3);
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold-accent);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(196, 160, 82, 0.15);
         }
 
-        .form-commitments-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 22px;
+        .form-textarea {
+            resize: vertical;
+            min-height: 110px;
         }
 
-        .commitment-item {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: flex-start;
+        .btn-submit-enquiry {
+            background: var(--text-heading);
+            color: #FAF8F5;
+            border: 1px solid var(--text-heading);
+            padding: 14px 34px;
+            border-radius: var(--radius-btn);
+            font-size: 0.96rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             gap: 8px;
         }
 
-        .commitment-item strong {
-            color: var(--gold-accent);
-        }
-
-        /* ==========================================================================
-           8. FAQ SECTION (Questions We Get First)
-           ========================================================================== */
-        .faq-section {
-            padding: 85px 0;
-            background: var(--bg-page-alt);
-        }
-
-        .faq-header {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 48px;
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--bg-card-border);
-            border-radius: var(--radius-btn);
-            overflow: hidden;
-            transition: border-color var(--transition);
-        }
-
-        .faq-item.open {
+        .btn-submit-enquiry:hover {
+            background: var(--gold-accent);
             border-color: var(--gold-accent);
+            color: #180022;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(196, 160, 82, 0.25);
         }
 
-        .faq-trigger {
-            width: 100%;
-            padding: 22px 24px;
-            background: transparent;
-            border: none;
-            font-family: var(--font-sans);
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--text-heading);
-            text-align: left;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
+        .contact-email-fallback {
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.92rem;
+            color: var(--text-muted);
         }
 
-        .faq-arrow {
+        .contact-email-fallback a {
             color: var(--gold-accent);
-            font-size: 1.2rem;
-            transition: transform var(--transition);
+            font-weight: 600;
+            text-decoration: none;
         }
 
-        .faq-item.open .faq-arrow {
-            transform: rotate(180deg);
+        .contact-email-fallback a:hover {
+            text-decoration: underline;
         }
 
-        .faq-content {
+        .contact-form-confirmation {
             display: none;
-            padding: 0 24px 22px;
-            font-size: 0.95rem;
-            color: var(--text-body);
-            line-height: 1.65;
+            background: rgba(196, 160, 82, 0.08);
+            border: 1px solid var(--gold-accent);
+            border-radius: var(--radius-card);
+            padding: 32px 24px;
+            text-align: center;
+            margin-bottom: 24px;
         }
 
-        .faq-item.open .faq-content {
+        .contact-form-confirmation.active {
             display: block;
         }
 
-        /* ==========================================================================
-           9. BOTTOM CALL TO ACTION
-           ========================================================================== */
+        .confirmation-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gold-accent);
+            color: #180022;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+
+        .confirmation-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--text-heading);
+            margin-bottom: 8px;
+        }
+
+        .confirmation-text {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* 6. BOTTOM CALL TO ACTION */
         .bottom-cta-banner {
             background: var(--bg-hero);
             color: #FFFFFF;
@@ -1020,9 +960,7 @@
             margin-bottom: 24px;
         }
 
-        /* ==========================================================================
-           10. FOOTER
-           ========================================================================== */
+        /* 7. FOOTER */
         .site-footer {
             background: var(--bg-page);
             border-top: 1px solid var(--bg-card-border);
@@ -1083,83 +1021,7 @@
             gap: 16px;
         }
 
-        /* ==========================================================================
-           11. FLOATING CONCIERGE WIDGETS
-           ========================================================================== */
-        /* Executive WhatsApp Concierge (Bottom Left) — Quiet Luxury branded */
-        .whatsapp-concierge {
-            position: fixed;
-            bottom: 20px;
-            left: 24px;
-            z-index: 99999;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #20002C;
-            color: #FAF8F5;
-            border: 1px solid rgba(175, 128, 54, 0.4);
-            border-radius: var(--radius-btn);
-            padding: 10px 18px;
-            text-decoration: none;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-            transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-        }
-
-        [data-theme="dark-full"] .whatsapp-concierge {
-            background: #1C0126;
-            border-color: rgba(175, 128, 54, 0.5);
-        }
-
-        .whatsapp-concierge:hover {
-            transform: translateY(-2px);
-            border-color: var(--gold-accent);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-        }
-
-        .whatsapp-icon-btn {
-            width: 32px;
-            height: 32px;
-            border-radius: var(--radius-btn);
-            background: rgba(175, 128, 54, 0.16);
-            color: var(--gold-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transition: background var(--transition), color var(--transition);
-        }
-
-        .whatsapp-concierge:hover .whatsapp-icon-btn {
-            background: var(--gold-accent);
-            color: #20002C;
-        }
-
-        .whatsapp-bubble {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            line-height: 1.25;
-            background: transparent;
-            padding: 0;
-            border: none;
-            box-shadow: none;
-        }
-
-        .whatsapp-bubble-eyebrow {
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--gold-accent);
-        }
-
-        .whatsapp-bubble strong {
-            font-size: 0.86rem;
-            font-weight: 600;
-            color: #FAF8F5;
-        }
-
-        /* Authentic GTranslate Floating Switcher */
+        /* GTranslate Floating Switcher */
         .gtranslate_wrapper {
             position: fixed !important;
             bottom: 16px !important;
@@ -1174,134 +1036,51 @@
             font-weight: 600 !important;
         }
 
-        .read-values-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #FAF8F5;
-            font-weight: 600;
-            text-decoration: none;
-            transition: gap var(--transition), color var(--transition);
-        }
-
-        .read-values-link:hover {
-            color: var(--gold-accent);
-            gap: 10px;
-        }
-
-        .lang-dropdown.open {
-            display: block;
-        }
-
-        .lang-opt {
-            display: block;
-            width: 100%;
-            padding: 9px 14px;
-            text-align: left;
-            background: transparent;
-            border: none;
-            font-size: 0.85rem;
-            color: #20002C;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background var(--transition);
-        }
-
-        .lang-opt:hover {
-            background: #F4EFE6;
-            color: var(--gold-accent);
-        }
-
-        /* ==========================================================================
-           RESPONSIVE BREAKPOINTS
-           ========================================================================== */
+        /* Responsive Breakpoints */
         @media (max-width: 1024px) {
-            .practices-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .footprint-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .stats-layout {
-                grid-template-columns: 1fr;
-            }
-            .stats-box:not(:last-child)::after {
-                display: none;
-            }
-            .case-study-card {
-                grid-template-columns: 1fr;
-            }
-            .contact-layout {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+            .practices-grid { grid-template-columns: repeat(2, 1fr); }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .value-highlight-card.span-two-cols { grid-column: span 2; }
+            .footprint-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-layout { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .main-nav-links {
-                display: none;
-            }
-            .mobile-hamburger {
-                display: block;
-            }
-            .hero-headline {
-                font-size: 2.6rem;
-            }
-            .values-header {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-            .practices-grid {
-                grid-template-columns: 1fr;
-            }
-            .footprint-grid {
-                grid-template-columns: 1fr;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-commitments-grid {
-                grid-template-columns: 1fr;
-            }
+            .main-nav-links { display: none; }
+            .mobile-hamburger { display: block; }
+            .hero-headline { font-size: 2.6rem; }
+            .values-header { grid-template-columns: 1fr; gap: 16px; }
+            .values-grid { grid-template-columns: 1fr; }
+            .value-highlight-card.span-two-cols { grid-column: span 1; }
+            .practices-grid { grid-template-columns: 1fr; }
+            .footprint-grid { grid-template-columns: 1fr; }
+            .contact-form-grid { grid-template-columns: 1fr; }
+            .form-group-full { grid-column: span 1; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .contact-form-card { padding: 32px 20px; }
         }
     </style>
 </head>
 <body>
-
-    <!-- =========================================================================
-         SITE HEADER & NAVIGATION
-         ========================================================================= -->
+    <!-- Top Header -->
     <header class="site-header">
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="brand-wrapper" aria-label="E'lique Advisory Consulting">
-                    <img src="images/logo-white.png" alt="E'lique Advisory" class="brand-logo-img" onerror="this.src='public/images/logo-white.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('fallback-title').style.display='block'; };">
-                    <span id="fallback-title" class="brand-title-fallback" style="display: none;">E'lique</span>
+                <a href="index.html" class="brand-wrapper" aria-label="E'lique Advisory">
+                    <img src="images/logo-white.png" alt="E'lique Advisory" class="brand-logo-img" onerror="this.src='public/images/logo-white.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('landing-fallback-title').style.display='block'; };">
+                    <span id="landing-fallback-title" class="brand-title-fallback" style="display: none;">E'lique Advisory</span>
                 </a>
 
                 <ul class="main-nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Practice Areas</a></li>
-                    <li><a href="#case-studies">Case-Studies</a></li>
                     <li><a href="#values">Values</a></li>
                     <li><a href="#footprint">Global Desks</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
 
                 <div class="header-controls">
-                    <!-- Dark / Light Theme Toggle Button -->
                     <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Dark/Light Mode">
                         <svg id="theme-sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
                             <circle cx="12" cy="12" r="5"></circle>
@@ -1319,12 +1098,10 @@
                         </svg>
                     </button>
 
-                    <!-- Contact Us Action -->
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-header-contact">
-                        <span>Contact Us</span>
+                    <a href="#contact" class="btn-header-contact">
+                        <span>Get in touch</span>
                     </a>
 
-                    <!-- Mobile Hamburger -->
                     <button type="button" class="mobile-hamburger" id="mobile-toggle" aria-label="Open Navigation">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -1340,499 +1117,378 @@
         <div class="mobile-drawer" id="mobile-drawer">
             <a href="#about" class="m-link">About</a>
             <a href="#services" class="m-link">Practice Areas</a>
-            <a href="#case-studies" class="m-link">Case-Studies</a>
-            <a href="values.html" class="m-link">Values</a>
+            <a href="#values" class="m-link">Values</a>
             <a href="#footprint" class="m-link">Global Desks</a>
-            <a href="#faq" class="m-link">FAQ</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-header-contact" style="justify-content: center; margin-top: 8px;">
-                Open Consultation Form
+            <a href="#contact" class="m-link">Contact</a>
+            <a href="#contact" class="btn-header-contact" style="justify-content: center; margin-top: 8px;">
+                Get in touch
             </a>
         </div>
     </header>
 
-    <main>
-        <!-- =====================================================================
-             1. HERO SECTION (Authentic Staging Typography & Clean Layout)
-             ===================================================================== -->
-        <section class="hero-section" id="about">
-            <div class="container">
-                <!-- Humanized, clean Africa tag directly from staging (NO AI rounded bubble) -->
-                <div class="hero-africa-eyebrow">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+    <!-- =====================================================================
+         1. HERO SECTION (BCG-Inspired Modern Executive Consulting Design)
+         ===================================================================== -->
+    <section class="hero-section" id="about">
+        <!-- BCG-Inspired Fluid Ambient Media Canvas (Zero-lag, 60fps GPU-accelerated) -->
+        <canvas id="hero-ambient-canvas" class="hero-ambient-canvas" aria-hidden="true"></canvas>
+
+        <div class="container">
+            <div class="hero-africa-eyebrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                <span>Built In Africa &nbsp;·&nbsp; Operating Globally</span>
+            </div>
+
+            <h1 class="hero-headline">
+                We build businesses <br>that <span class="italic-gold">scale</span>
+            </h1>
+
+            <div class="hero-divider"></div>
+
+            <p class="hero-paragraph">
+                We partner with ambitious businesses to build organisations that are scalable, resilient, and future-ready.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn-white-action" id="hero-action-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        <line x1="8" y1="10" x2="8.01" y2="10" stroke-width="2.5"></line>
+                        <line x1="12" y1="10" x2="12.01" y2="10" stroke-width="2.5"></line>
+                        <line x1="16" y1="10" x2="16.01" y2="10" stroke-width="2.5"></line>
                     </svg>
-                    <span>Built In Africa &nbsp;·&nbsp; Operating Globally</span>
-                </div>
+                    <span>Get in touch</span>
+                </a>
 
-                <h1 class="hero-headline">
-                    We build businesses <br>that <span class="italic-gold">scale</span>
-                </h1>
+                <a href="#services" class="btn-link-explore">
+                    <span>Explore Our Practice Areas</span> &rarr;
+                </a>
+            </div>
+        </div>
 
-                <div class="hero-divider"></div>
+        <!-- BCG-Style Bottom-Right Ambient Media Pause / Play Controls -->
+        <div class="hero-media-controls">
+            <button type="button" id="hero-play-pause-btn" class="hero-pause-btn" aria-label="Pause ambient background animation" title="Pause background animation">
+                <svg class="hero-icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                    <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+                </svg>
+                <svg class="hero-icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display: none; margin-left: 2px;">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+            </button>
+        </div>
+    </section>
 
-                <p class="hero-paragraph">
-                    We partner with ambitious businesses to build organisations that are scalable, resilient, and future-ready.
+    <!-- =====================================================================
+         2. PRACTICE AREAS (Placed Immediately After Hero)
+         ===================================================================== -->
+    <section class="practices-section" id="services">
+        <div class="container">
+            <div class="practices-header">
+                <h2 class="practices-title">Seven practice <span class="italic-gold">areas</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 12px; max-width: 720px; line-height: 1.65;">
+                    Seven practice areas, one team. We work across strategy, finance, technology, tax, risk and people to help ambitious businesses grow with confidence.
                 </p>
+            </div>
 
-                <div class="hero-actions">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-white-action">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <span>Start a Conversation</span>
+            <div class="practices-grid">
+                <!-- 1. Strategy & Growth -->
+                <div class="practice-card card-emerald" id="strategy-growth">
+                    <div>
+                        <div class="practice-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        </div>
+                        <span class="practice-category-tag">STRATEGY &amp; GROWTH</span>
+                        <h3 class="practice-card-title">Strategy &amp; Growth</h3>
+                        <p class="practice-card-text">Growth needs a clear roadmap and an advisor who understands both the numbers and the vision. We help leaders set strategy, plan for growth and turn it into practical steps that hold up in the real world.</p>
+                        <p class="practice-card-tags">Strategic planning · Growth roadmaps · Market entry</p>
+                    </div>
+                    <a href="#contact" class="practice-card-link">
+                        <span>Learn more</span> &rarr;
                     </a>
+                </div>
 
-                    <a href="#services" class="btn-link-explore">
-                        <span>Explore Our Services</span> &rarr;
+                <!-- 2. CFO & Cloud Accounting -->
+                <div class="practice-card card-bronze" id="cfo-cloud-accounting">
+                    <div>
+                        <div class="practice-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <span class="practice-category-tag">CFO &amp; FINANCE</span>
+                        <h3 class="practice-card-title">CFO &amp; Cloud Accounting</h3>
+                        <p class="practice-card-text">Growing businesses need more than bookkeeping. They need a finance function that gives leadership real-time insight and supports sound decisions. We provide CFO-level advice and cloud accounting that keep you informed and in control.</p>
+                        <p class="practice-card-tags">Management reporting · Cloud accounting · Budgeting and forecasting</p>
+                    </div>
+                    <a href="#contact" class="practice-card-link">
+                        <span>Learn more</span> &rarr;
+                    </a>
+                </div>
+
+                <!-- 3. Digital & AI -->
+                <div class="practice-card card-plum" id="digital-ai">
+                    <div>
+                        <div class="practice-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <span class="practice-category-tag">DIGITAL &amp; AI</span>
+                        <h3 class="practice-card-title">Digital &amp; AI</h3>
+                        <p class="practice-card-text">Adopting AI and digital tools shouldn't take the resources of a multinational. We help you choose, implement and use the right technology so it delivers real results for your business.</p>
+                        <p class="practice-card-tags">AI adoption · Process automation · Digital tools</p>
+                    </div>
+                    <a href="#contact" class="practice-card-link">
+                        <span>Learn more</span> &rarr;
+                    </a>
+                </div>
+
+                <!-- 4. Tax & Global Mobility -->
+                <div class="practice-card card-navy" id="tax-global-mobility">
+                    <div>
+                        <div class="practice-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <span class="practice-category-tag">TAX &amp; MOBILITY</span>
+                        <h3 class="practice-card-title">Tax &amp; Global Mobility</h3>
+                        <p class="practice-card-text">Cross-border tax is complex, the stakes are high and the wrong structure can cost far more than the advice. We advise on tax and global mobility so your people, money and business move across borders with confidence.</p>
+                        <p class="practice-card-tags">Cross-border tax · Global mobility · Structuring</p>
+                    </div>
+                    <a href="#contact" class="practice-card-link">
+                        <span>Learn more</span> &rarr;
+                    </a>
+                </div>
+
+                <!-- 5. Risk, Governance & Compliance -->
+                <div class="practice-card card-terracotta" id="risk-governance-compliance">
+                    <div>
+                        <div class="practice-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <span class="practice-category-tag">RISK &amp; GOVERNANCE</span>
+                        <h3 class="practice-card-title">Risk, Governance &amp; Compliance</h3>
+                        <p class="practice-card-text">Every growing business reaches a point where informal ways of working are no longer enough. We help you put governance, risk management and compliance in place so you can scale with confidence.</p>
+                        <p class="practice-card-tags">Governance frameworks · Risk management · Compliance</p>
+                    </div>
+                    <a href="#contact" class="practice-card-link">
+                        <span>Learn more</span> &rarr;
+                    </a>
+                </div>
+
+                <!-- 6. People & Capability -->
+                <div class="practice-card card-indigo" id="people-capability">
+                    <div>
+                        <div class="practice-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <span class="practice-category-tag">PEOPLE &amp; CAPABILITY</span>
+                        <h3 class="practice-card-title">People &amp; Capability</h3>
+                        <p class="practice-card-text">Strong businesses are built on strong people. We help you develop your teams, design the roles and structures you need and build the internal capability to sustain growth.</p>
+                        <p class="practice-card-tags">Organisation design · Talent and training · Team development</p>
+                    </div>
+                    <a href="#contact" class="practice-card-link">
+                        <span>Learn more</span> &rarr;
+                    </a>
+                </div>
+
+                <!-- 7. Public Sector & Government -->
+                <div class="practice-card card-pine" id="public-sector-government">
+                    <div>
+                        <div class="practice-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 22 7 12 2"></polygon><line x1="6" y1="10" x2="6" y2="18"></line><line x1="10" y1="10" x2="10" y2="18"></line><line x1="14" y1="10" x2="14" y2="18"></line><line x1="18" y1="10" x2="18" y2="18"></line><line x1="2" y1="21" x2="22" y2="21"></line></svg>
+                        </div>
+                        <span class="practice-category-tag">PUBLIC SECTOR &amp; GOVERNMENT</span>
+                        <h3 class="practice-card-title">Public Sector &amp; Government</h3>
+                        <p class="practice-card-text">Public institutions need advisory partners who combine technical expertise with a real understanding of local context. We support government bodies and public-sector organisations across our markets, drawing on our African roots and global reach.</p>
+                        <p class="practice-card-tags">Policy advisory · Public finance · Institutional capacity</p>
+                    </div>
+                    <a href="#contact" class="practice-card-link">
+                        <span>Learn more</span> &rarr;
                     </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- =====================================================================
-             2. STATS & FOOTPRINT (Warm Ivory Staging Layout)
-             ===================================================================== -->
-        <section class="stats-section">
-            <div class="container">
-                <div class="stats-layout">
-                    <div>
-                        <h2 class="stats-intro-title">
-                            A <span class="italic-gold">Global</span> Firm, <br>
-                            Six Offices, Three Continents.
-                        </h2>
-                    </div>
-
-                    <div class="stats-grid">
-                        <div class="stat-box">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Years Advising</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">40+</div>
-                            <div class="stat-label">Market Served</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">300+</div>
-                            <div class="stat-label">Engagement Delivered</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">6+</div>
-                            <div class="stat-label">Global Offices</div>
-                        </div>
-                    </div>
+    <!-- =====================================================================
+         3. CORE VALUES (Follows Practice Areas)
+         ===================================================================== -->
+    <section class="values-section" id="values">
+        <div class="container">
+            <div class="values-header">
+                <div>
+                    <span class="section-eyebrow">OUR VALUES</span>
+                    <h2 class="values-headline">
+                        Values we live by, <br>
+                        <span class="italic-gold">not ones we aspire to.</span>
+                    </h2>
+                </div>
+                <div>
+                    <p class="values-subtext">
+                        Seven values, held in our work, our relationships and our lives. They are the foundation of everything E'lique is and every relationship we build.
+                    </p>
                 </div>
             </div>
-        </section>
 
-        <!-- =====================================================================
-             3. CORE VALUES (Authentic Staging Grid)
-             ===================================================================== -->
-        <section class="values-section" id="values">
-            <div class="container">
-                <div class="values-header">
-                    <div>
-                        <span class="section-eyebrow">OUR VALUES</span>
-                        <h2 class="values-headline">
-                            Values we live by, <br>
-                            <span class="italic-gold">not ones we aspire to.</span>
-                        </h2>
-                    </div>
-                    <div>
-                        <p class="values-subtext">
-                            Seven values, held in our work, in our relationships and in our lives. They are the foundation of everything E’lique is, everyone we hire, and every relationship we build.
-                        </p>
-                    </div>
+            <div class="values-grid">
+                <!-- 1. Integrity -->
+                <div class="value-card" id="main-value-1">
+                    <div class="value-badge">1</div>
+                    <h3 class="value-title">Integrity</h3>
+                    <p class="value-card-tagline-lead">We do the right thing, especially when it's hard.</p>
+                    <p class="value-card-body-text">Ethics are the lens for every decision we make, not a statement on a wall.</p>
                 </div>
 
-                <div class="values-grid">
-                    <!-- 1 -->
-                    <div class="value-card">
-                        <div class="value-badge">1</div>
-                        <h3 class="value-title">Integrity</h3>
-                        <p class="value-description">Integrity is not a value we display on a wall. It is the lens through which every decision at E’lique is made.</p>
-                    </div>
+                <!-- 2. Ownership -->
+                <div class="value-card" id="main-value-2">
+                    <div class="value-badge">2</div>
+                    <h3 class="value-title">Ownership</h3>
+                    <p class="value-card-tagline-lead">We own our work, not just do it.</p>
+                    <p class="value-card-body-text">We take full responsibility for what we deliver, as if our name is on it.</p>
+                </div>
 
-                    <!-- 2 -->
-                    <div class="value-card">
-                        <div class="value-badge">2</div>
-                        <h3 class="value-title">Ownership</h3>
-                        <p class="value-description">We own our work, not just do it. At E’lique, we do not just deliver work. We take full responsibility for it.</p>
-                    </div>
+                <!-- 3. Solutions Thinking -->
+                <div class="value-card" id="main-value-3">
+                    <div class="value-badge">3</div>
+                    <h3 class="value-title">Solutions Thinking</h3>
+                    <p class="value-card-tagline-lead">Curious by nature, relentless by choice.</p>
+                    <p class="value-card-body-text">We ask better questions and keep looking for the way forward.</p>
+                </div>
 
-                    <!-- 3 -->
-                    <div class="value-card">
-                        <div class="value-badge">3</div>
-                        <h3 class="value-title">Solutions Thinking</h3>
-                        <p class="value-description">At E’lique, challenges excite us, because we know that behind every problem is an opportunity to change someone’s story.</p>
-                    </div>
+                <!-- 4. Relationships -->
+                <div class="value-card" id="main-value-4">
+                    <div class="value-badge">4</div>
+                    <h3 class="value-title">Relationships</h3>
+                    <p class="value-card-tagline-lead">Relationships are our greatest asset.</p>
+                    <p class="value-card-body-text">They are not a strategy. They are our wealth, built with care, honesty and a long view.</p>
+                </div>
 
-                    <!-- 4 -->
-                    <div class="value-card">
-                        <div class="value-badge">4</div>
-                        <h3 class="value-title">Relationships</h3>
-                        <p class="value-description">Relationships are our greatest asset. At E’lique, relationships are not a strategy. They are our wealth.</p>
-                    </div>
+                <!-- 5. Loyalty and Dedication -->
+                <div class="value-card" id="main-value-5">
+                    <div class="value-badge">5</div>
+                    <h3 class="value-title">Loyalty and Dedication</h3>
+                    <p class="value-card-tagline-lead">We measure loyalty in presence, not years.</p>
+                    <p class="value-card-body-text">Our full commitment to every client and colleague, for as long as we work together.</p>
+                </div>
 
-                    <!-- 5 -->
-                    <div class="value-card">
-                        <div class="value-badge">5</div>
-                        <h3 class="value-title">Loyalty and Dedication</h3>
-                        <p class="value-description">At E’lique, we believe that people and partnerships exist for seasons. Some short, some long, all purposeful.</p>
-                    </div>
+                <!-- 6. Excellence -->
+                <div class="value-card" id="main-value-6">
+                    <div class="value-badge">6</div>
+                    <h3 class="value-title">Excellence</h3>
+                    <p class="value-card-tagline-lead">Good enough is never enough.</p>
+                    <p class="value-card-body-text">Everything that carries the E'lique name carries the same standard.</p>
+                </div>
 
-                    <!-- 6 -->
-                    <div class="value-card">
-                        <div class="value-badge">6</div>
-                        <h3 class="value-title">Excellence</h3>
-                        <p class="value-description">Good enough is never enough. Everything that carries the E’lique name carries a standard with it.</p>
-                    </div>
+                <!-- 7. Accountability -->
+                <div class="value-card" id="main-value-7">
+                    <div class="value-badge">7</div>
+                    <h3 class="value-title">Accountability</h3>
+                    <p class="value-card-tagline-lead">Accountability is the doorway to growth.</p>
+                    <p class="value-card-body-text">When things go wrong, we reflect, learn and tell you what we're doing about it.</p>
+                </div>
 
-                    <!-- 7 -->
-                    <div class="value-card">
-                        <div class="value-badge">7</div>
-                        <h3 class="value-title">Accountability</h3>
-                        <p class="value-description">At E’lique, we take full responsibility for our actions, with our clients, with each other and with ourselves.</p>
-                    </div>
-
-                    <!-- 8th Highlight Box -->
-                    <div class="value-highlight-card">
+                <!-- Link Card spanning last two columns -->
+                <div class="value-highlight-card span-two-cols">
+                    <div>
+                        <span class="section-eyebrow" style="color: var(--gold-accent);">IN PRACTICE</span>
                         <h3>What each one means in practice.</h3>
-                        <a href="values.html" class="read-values-link">
-                            <span>Read our values &rarr;</span>
-                        </a>
                     </div>
+                    <a href="values.html" class="read-values-link">
+                        <span>Read our values &rarr;</span>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- =====================================================================
-             4. PRACTICE AREAS (Tailored Color Palette from Staging)
-             ===================================================================== -->
-        <section class="practices-section" id="services">
-            <div class="container">
-                <div class="practices-header">
-                    <span class="section-eyebrow">INDUSTRIES</span>
-                    <h2 class="practices-title">Seven practice <span class="italic-gold">areas</span></h2>
-                </div>
-
-                <div class="practices-grid">
-                    <!-- 1. Strategy & Growth (Emerald) -->
-                    <div class="practice-card card-emerald" id="strategy">
-                        <div>
-                            <div class="practice-icon-box">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                                    <polyline points="16 7 22 7 22 13"></polyline>
-                                </svg>
-                            </div>
-                            <span class="practice-category-tag">STRATEGY &amp; GROWTH</span>
-                            <h3 class="practice-card-title">Strategy &amp; Growth</h3>
-                            <p class="practice-card-text">Most founders are building without a clear roadmap, a trusted advisor who understands both the numbers and the vision, or a strategy that can survive contact with the real world.</p>
-                        </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="practice-card-link">
-                            <span>Consult Practice Team</span> &rarr;
-                        </a>
-                    </div>
-
-                    <!-- 2. Digital & AI (Regal Plum) -->
-                    <div class="practice-card card-plum" id="digital">
-                        <div>
-                            <div class="practice-icon-box">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                                </svg>
-                            </div>
-                            <span class="practice-category-tag">DIGITAL &amp; AI</span>
-                            <h3 class="practice-card-title">Digital &amp; AI</h3>
-                            <p class="practice-card-text">Every business is facing the same question: how do we adopt AI and digital tools without the resources of a multinational? E’lique’s Digital &amp; AI practice answers that question.</p>
-                        </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="practice-card-link">
-                            <span>Consult Practice Team</span> &rarr;
-                        </a>
-                    </div>
-
-                    <!-- 3. CFO & Cloud Accounting (Warm Bronze) -->
-                    <div class="practice-card card-bronze" id="accounting">
-                        <div>
-                            <div class="practice-icon-box">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="12" y1="1" x2="12" y2="23"></line>
-                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                </svg>
-                            </div>
-                            <span class="practice-category-tag">CFO &amp; FINANCE</span>
-                            <h3 class="practice-card-title">CFO &amp; Cloud Accounting</h3>
-                            <p class="practice-card-text">Most growing businesses do not need more bookkeeping. They need a finance function that gives leadership real-time insight, supports strategic decision-making.</p>
-                        </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="practice-card-link">
-                            <span>Consult Practice Team</span> &rarr;
-                        </a>
-                    </div>
-
-                    <!-- 4. Tax & Global Mobility (Deep Navy) -->
-                    <div class="practice-card card-navy" id="tax">
-                        <div>
-                            <div class="practice-icon-box">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
-                                </svg>
-                            </div>
-                            <span class="practice-category-tag">TAX &amp; MOBILITY</span>
-                            <h3 class="practice-card-title">Tax &amp; Global Mobility</h3>
-                            <p class="practice-card-text">Cross-border tax is where most advisory firms fall short. The rules are complex, the stakes are high, and the wrong structure can cost a business far more than the advice would have.</p>
-                        </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="practice-card-link">
-                            <span>Consult Practice Team</span> &rarr;
-                        </a>
-                    </div>
-
-                    <!-- 5. Risk, Governance & Compliance (Terracotta) -->
-                    <div class="practice-card card-terracotta" id="risk">
-                        <div>
-                            <div class="practice-icon-box">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                </svg>
-                            </div>
-                            <span class="practice-category-tag">RISK &amp; GOVERNANCE</span>
-                            <h3 class="practice-card-title">Risk, Governance &amp; Compliance</h3>
-                            <p class="practice-card-text">Every business that grows beyond a certain point faces a governance gap the moment when informal ways of working are no longer sufficient.</p>
-                        </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="practice-card-link">
-                            <span>Consult Practice Team</span> &rarr;
-                        </a>
-                    </div>
-
-                    <!-- 6. People & Capability (Slate Indigo) -->
-                    <div class="practice-card card-indigo" id="people">
-                        <div>
-                            <div class="practice-icon-box">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                            <span class="practice-category-tag">PEOPLE &amp; TALENT</span>
-                            <h3 class="practice-card-title">People &amp; Capability</h3>
-                            <p class="practice-card-text">The best businesses are built by the best people. E’lique’s People &amp; Capability practice helps clients build both developing their teams and internal capability.</p>
-                        </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="practice-card-link">
-                            <span>Consult Practice Team</span> &rarr;
-                        </a>
-                    </div>
-
-                    <!-- 7. Public Sector & Government (Forest Pine) -->
-                    <div class="practice-card card-pine" id="public">
-                        <div>
-                            <div class="practice-icon-box">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="12 2 2 7 22 7 12 2"></polygon>
-                                    <line x1="6" y1="10" x2="6" y2="18"></line>
-                                    <line x1="10" y1="10" x2="10" y2="18"></line>
-                                    <line x1="14" y1="10" x2="14" y2="18"></line>
-                                    <line x1="18" y1="10" x2="18" y2="18"></line>
-                                    <line x1="2" y1="21" x2="22" y2="21"></line>
-                                </svg>
-                            </div>
-                            <span class="practice-category-tag">PUBLIC SECTOR</span>
-                            <h3 class="practice-card-title">Public Sector &amp; Government</h3>
-                            <p class="practice-card-text">Government is one of the largest spenders on advisory services across every market E’lique operates in; yet it is chronically underserved by firms that understand the African context.</p>
-                        </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="practice-card-link">
-                            <span>Consult Practice Team</span> &rarr;
-                        </a>
-                    </div>
-                </div>
+    <!-- =====================================================================
+         4. GLOBAL FOOTPRINT (3 Registered Desks)
+         ===================================================================== -->
+    <section class="footprint-section" id="footprint">
+        <div class="container">
+            <div class="footprint-header">
+                <span class="section-eyebrow">GLOBAL FOOTPRINT</span>
+                <h2 class="practices-title">Built In Africa. Operating Globally.</h2>
             </div>
-        </section>
 
-        <!-- =====================================================================
-             5. FEATURED CASE STUDY
-             ===================================================================== -->
-        <section class="case-study-section" id="case-studies">
-            <div class="container">
-                <div class="case-study-card">
+            <div class="footprint-grid">
+                <!-- South Africa -->
+                <div class="footprint-card">
+                    <div class="flag-wrapper" title="South Africa">
+                        <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#000" d="M0 0h900v600H0z"/>
+                            <path fill="#fff" d="M0 0h900v200H0zm0 400h900v200H0z"/>
+                            <path fill="#E03C31" d="M0 0h900v180H0z"/>
+                            <path fill="#001489" d="M0 420h900v180H0z"/>
+                            <path fill="#fff" d="M0 0l450 300L0 600z"/>
+                            <path fill="#FFB81C" d="M0 40l390 260L0 560z"/>
+                            <path fill="#000" d="M0 70l345 230L0 530z"/>
+                            <path fill="#007749" d="M0 240h900v120H0zm0-240l450 300H900v-60H450L0-60zm0 600l450-300H900v60H450L0 660z"/>
+                        </svg>
+                    </div>
                     <div>
-                        <span class="section-eyebrow" style="color: var(--gold-accent);">FEATURED CASE STUDY</span>
-                        <h2 class="case-study-headline">A regional distributor becomes a continental platform.</h2>
-                        <p class="case-study-sub">
-                            A five-market expansion strategy, a rebuilt operating model, and a leadership team equipped to run it.
-                        </p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-white-action">
-                            <span>Schedule an Advisory Briefing</span> &rarr;
-                        </a>
+                        <h3 class="footprint-country-title">South Africa</h3>
+                        <div class="footprint-cities">Johannesburg</div>
                     </div>
+                </div>
 
-                    <div class="case-stat-block">
-                        <div class="case-stat-big">3.2×</div>
-                        <div class="case-stat-caption">REVENUE GROWTH IN 24 MONTHS</div>
+                <!-- United Kingdom -->
+                <div class="footprint-card">
+                    <div class="flag-wrapper" title="United Kingdom">
+                        <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+                            <clipPath id="uk-f"><path d="M0 0v30h60V0z"/></clipPath>
+                            <path d="M0 0v30h60V0z" fill="#012169"/>
+                            <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
+                            <path d="M0 0l60 30m0-30L0 30" clip-path="url(#uk-f)" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="footprint-country-title">United Kingdom</h3>
+                        <div class="footprint-cities">London</div>
+                    </div>
+                </div>
+
+                <!-- Ghana -->
+                <div class="footprint-card">
+                    <div class="flag-wrapper" title="Ghana">
+                        <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="900" height="200" fill="#cf0921"/>
+                            <rect y="200" width="900" height="200" fill="#fcd20e"/>
+                            <rect y="400" width="900" height="200" fill="#006b3f"/>
+                            <polygon points="450,230 480,320 570,320 500,370 525,460 450,405 375,460 400,370 330,320 420,320" fill="#000"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="footprint-country-title">Ghana</h3>
+                        <div class="footprint-cities">Accra</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- =====================================================================
-             6. GLOBAL FOOTPRINT (With Crisp Originator Flags)
-             ===================================================================== -->
-        <section class="footprint-section" id="footprint">
-            <div class="container">
-                <div class="footprint-header">
-                    <span class="section-eyebrow">GLOBAL FOOTPRINT</span>
-                    <h2 class="practices-title">Built In Africa. Operating Globally.</h2>
-                </div>
-
-                <div class="footprint-grid">
-                    <!-- South Africa -->
-                    <div class="footprint-card">
-                        <div class="flag-wrapper" title="South Africa">
-                            <!-- Official South Africa SVG Flag -->
-                            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
-                                <clipPath id="sa"><path d="M0 0h900v600H0z"/></clipPath>
-                                <g clip-path="url(#sa)">
-                                    <path fill="#000" d="M0 0h900v600H0z"/>
-                                    <path fill="#fff" d="M0 0h900v200H0zm0 400h900v200H0z"/>
-                                    <path fill="#E03C31" d="M0 0h900v180H0z"/>
-                                    <path fill="#001489" d="M0 420h900v180H0z"/>
-                                    <path fill="#fff" d="M0 0l450 300L0 600z"/>
-                                    <path fill="#FFB81C" d="M0 40l390 260L0 560z"/>
-                                    <path fill="#000" d="M0 70l345 230L0 530z"/>
-                                    <path fill="#007749" d="M0 240h900v120H0zm0-240l450 300H900v-60H450L0-60zm0 600l450-300H900v60H450L0 660z"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="footprint-country-title">South Africa</h3>
-                            <div class="footprint-cities">Johannesburg & Kimberley</div>
-                        </div>
-                    </div>
-
-                    <!-- United Kingdom -->
-                    <div class="footprint-card">
-                        <div class="flag-wrapper" title="United Kingdom">
-                            <!-- Official United Kingdom Union Jack SVG -->
-                            <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
-                                <clipPath id="uk"><path d="M0 0v30h60V0z"/></clipPath>
-                                <clipPath id="uk-diag"><path d="M0 0l60 30m0-30L0 30"/></clipPath>
-                                <path d="M0 0v30h60V0z" fill="#012169"/>
-                                <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
-                                <path d="M0 0l60 30m0-30L0 30" clip-path="url(#uk)" stroke="#C8102E" stroke-width="4"/>
-                                <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
-                                <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="footprint-country-title">United Kingdom</h3>
-                            <div class="footprint-cities">London</div>
-                        </div>
-                    </div>
-
-                    <!-- United States -->
-                    <div class="footprint-card">
-                        <div class="flag-wrapper" title="United States">
-                            <!-- Official USA SVG -->
-                            <svg viewBox="0 0 7410 3900" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="7410" height="3900" fill="#b22234"/>
-                                <path d="M0 450h7410M0 1050h7410M0 1650h7410M0 2250h7410M0 2850h7410M0 3450h7410" stroke="#fff" stroke-width="300"/>
-                                <rect width="2964" height="2100" fill="#3c3b6e"/>
-                                <circle cx="1482" cy="1050" r="800" fill="#fff" opacity="0.9"/>
-                                <rect width="2964" height="2100" fill="#3c3b6e"/>
-                                <g fill="#fff">
-                                    <circle cx="500" cy="500" r="70"/><circle cx="1000" cy="500" r="70"/><circle cx="1500" cy="500" r="70"/><circle cx="2000" cy="500" r="70"/>
-                                    <circle cx="750" cy="800" r="70"/><circle cx="1250" cy="800" r="70"/><circle cx="1750" cy="800" r="70"/><circle cx="2250" cy="800" r="70"/>
-                                    <circle cx="500" cy="1100" r="70"/><circle cx="1000" cy="1100" r="70"/><circle cx="1500" cy="1100" r="70"/><circle cx="2000" cy="1100" r="70"/>
-                                    <circle cx="750" cy="1400" r="70"/><circle cx="1250" cy="1400" r="70"/><circle cx="1750" cy="1400" r="70"/><circle cx="2250" cy="1400" r="70"/>
-                                    <circle cx="500" cy="1700" r="70"/><circle cx="1000" cy="1700" r="70"/><circle cx="1500" cy="1700" r="70"/><circle cx="2000" cy="1700" r="70"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="footprint-country-title">United States</h3>
-                            <div class="footprint-cities">New York</div>
-                        </div>
-                    </div>
-
-                    <!-- Ghana -->
-                    <div class="footprint-card">
-                        <div class="flag-wrapper" title="Ghana">
-                            <!-- Official Ghana Flag with Black Star -->
-                            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="900" height="200" fill="#cf0921"/>
-                                <rect y="200" width="900" height="200" fill="#fcd20e"/>
-                                <rect y="400" width="900" height="200" fill="#006b3f"/>
-                                <polygon points="450,230 480,320 570,320 500,370 525,460 450,405 375,460 400,370 330,320 420,320" fill="#000"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="footprint-country-title">Ghana</h3>
-                            <div class="footprint-cities">Accra</div>
-                        </div>
-                    </div>
-
-                    <!-- United Arab Emirates -->
-                    <div class="footprint-card">
-                        <div class="flag-wrapper" title="United Arab Emirates">
-                            <!-- Official UAE Flag SVG -->
-                            <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="1200" height="200" fill="#00732f"/>
-                                <rect y="200" width="1200" height="200" fill="#fff"/>
-                                <rect y="400" width="1200" height="200" fill="#000"/>
-                                <rect width="300" height="600" fill="#f00"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="footprint-country-title">United Arab Emirates</h3>
-                            <div class="footprint-cities">Dubai</div>
-                        </div>
-                    </div>
-
-                    <!-- Singapore -->
-                    <div class="footprint-card">
-                        <div class="flag-wrapper" title="Singapore">
-                            <!-- Official Singapore Flag SVG -->
-                            <svg viewBox="0 0 144 96" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="144" height="48" fill="#ED2939"/>
-                                <rect y="48" width="144" height="48" fill="#fff"/>
-                                <circle cx="34" cy="24" r="16.5" fill="#fff"/>
-                                <circle cx="39.5" cy="24" r="16.5" fill="#ED2939"/>
-                                <g fill="#fff">
-                                    <circle cx="38" cy="14" r="2.5"/><circle cx="46" cy="19" r="2.5"/><circle cx="46" cy="29" r="2.5"/>
-                                    <circle cx="38" cy="34" r="2.5"/><circle cx="33" cy="24" r="2.5"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="footprint-country-title">Singapore</h3>
-                            <div class="footprint-cities">Singapore</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================================
-             7. DIRECT LINES & GOOGLE FORM LEAD PIPELINE
-             ===================================================================== -->
-        <section class="contact-section" id="contact">
-            <div class="container">
-                <div class="contact-layout">
-                    <!-- Direct Lines -->
-                    <div class="direct-lines-box">
+    <!-- =====================================================================
+         5. CONTACT SECTION (BCG-Inspired Contact Form)
+         ===================================================================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Direct Lines -->
+                <div class="direct-lines-box">
+                    <div class="direct-lines-content-top">
                         <span class="section-eyebrow">DIRECT LINES</span>
                         <h2 style="font-size: 1.85rem; color: var(--text-heading); margin-bottom: 8px;">Skip the form if you already know who you need.</h2>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 28px;">
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">
                             Direct channels for commercial discussions, time-critical counsel, and media requests.
                         </p>
+                    </div>
 
+                    <div class="direct-items-wrapper">
                         <div class="direct-item">
                             <div class="direct-tag">New engagements</div>
-                            <a href="mailto:info@eliqueadvisory.com" class="direct-contact-link">info@eliqueadvisory.com</a>
+                            <a href="mailto:enquiries@eliqueadvisory.com" class="direct-contact-link">enquiries@eliqueadvisory.com</a>
                             <div class="direct-desc">Scoping, proposals and commercial terms.</div>
                         </div>
 
@@ -1848,129 +1504,138 @@
                             <div class="direct-desc">Media requests and conference invitations.</div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Google Form Lead Intake Card -->
-                    <div class="consultation-form-card">
-                        <span class="section-eyebrow" style="color: var(--gold-accent);">START AN ENGAGEMENT</span>
-                        <h2>Start with a conversation, <br><span class="italic-gold">not a pitch.</span></h2>
-                        <p>
-                            Tell us what you are trying to build and where it is stuck. A partner reads every enquiry and replies within one business day.
+                <!-- BCG-Style Interactive Contact Form -->
+                <div class="contact-form-card">
+                    <span class="section-eyebrow" style="color: var(--gold-accent);">CONTACT SECTION</span>
+                    <h2 class="contact-form-heading">Get in touch</h2>
+                    <p class="contact-form-intro">
+                        Tell us a little about what you need and we'll make sure your enquiry reaches the right person.
+                    </p>
+
+                    <!-- Success Confirmation Message Box -->
+                    <div id="contact-form-success-box" class="contact-form-confirmation">
+                        <div class="confirmation-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="confirmation-title">Thank You</h3>
+                        <p class="confirmation-text" id="contact-confirmation-text">
+                            Thank you for contacting E'lique Advisory. We've received your enquiry and a member of our team will respond within one business day.
                         </p>
+                    </div>
 
-                        <div class="google-form-trigger-box">
-                            <h3>Consultation Intake Form</h3>
-                            <p>Complete our secure Google Form to outline your organization's scope and timelines.</p>
-                            
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-launch-google-form" id="lead-google-form-btn">
-                                <span>Open Google Form</span>
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                            </a>
-                        </div>
+                    <form id="main-contact-form">
+                        <div class="contact-form-grid">
+                            <!-- Full Name -->
+                            <div class="form-field-group">
+                                <label for="name" class="form-label">Full name *</label>
+                                <input type="text" name="name" id="name" required class="form-input" placeholder="e.g. Tendai Moyo">
+                            </div>
 
-                        <div class="form-commitments-grid">
-                            <div class="commitment-item">
-                                <strong>1.</strong> Review within 1 business day.
+                            <!-- Email Address -->
+                            <div class="form-field-group">
+                                <label for="email" class="form-label">Email address *</label>
+                                <input type="email" name="email" id="email" required class="form-input" placeholder="name@organisation.com">
                             </div>
-                            <div class="commitment-item">
-                                <strong>2.</strong> 30-min scoping call.
+
+                            <!-- Company / Organisation -->
+                            <div class="form-field-group">
+                                <label for="company" class="form-label">Company / organisation *</label>
+                                <input type="text" name="company" id="company" required class="form-input" placeholder="e.g. Pan-African Holdings">
                             </div>
-                            <div class="commitment-item">
-                                <strong>3.</strong> 1-page problem diagnostic.
+
+                            <!-- Country (Dropdown) -->
+                            <div class="form-field-group">
+                                <label for="country" class="form-label">Country *</label>
+                                <select name="country" id="country" required class="form-select">
+                                    <option value="" disabled selected>Select your country</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Ghana">Ghana</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="France">France</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
-                            <div class="commitment-item">
-                                <strong>4.</strong> Transparent commercial options.
+
+                            <!-- Enquiry Type (Dropdown) -->
+                            <div class="form-field-group form-group-full">
+                                <label for="enquiry_type" class="form-label">Enquiry type *</label>
+                                <select name="enquiry_type" id="enquiry_type" required class="form-select">
+                                    <option value="" disabled selected>Select enquiry type</option>
+                                    <option value="New business">New business</option>
+                                    <option value="Partnerships and sponsorship">Partnerships and sponsorship</option>
+                                    <option value="Training">Training</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Careers">Careers</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="form-field-group form-group-full">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea name="message" id="message" rows="4" required class="form-textarea" placeholder="Tell us a little about your project, timing, or advisory requirements..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group-full" style="margin-top: 8px;">
+                                <button type="submit" class="btn-submit-enquiry" id="contact-submit-btn">
+                                    <span>Send enquiry</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
+                    </form>
+
+                    <!-- Email Option Below Form -->
+                    <div class="contact-email-fallback">
+                        Prefer to email? Write to us at <a href="mailto:enquiries@eliqueadvisory.com">enquiries@eliqueadvisory.com</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- =====================================================================
-             8. FAQ (Questions We Get First)
-             ===================================================================== -->
-        <section class="faq-section" id="faq">
-            <div class="container">
-                <div class="faq-header">
-                    <span class="section-eyebrow">BEFORE YOU WRITE</span>
-                    <h2 class="practices-title">Questions we get first.</h2>
-                </div>
+    <!-- =====================================================================
+         6. BOTTOM CALL TO ACTION
+         ===================================================================== -->
+    <section class="bottom-cta-banner">
+        <div class="container">
+            <h2 class="bottom-cta-headline">
+                Let’s build what <span class="italic-gold">lasts</span>
+            </h2>
+            <a href="#contact" class="btn-white-action">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    <line x1="8" y1="10" x2="8.01" y2="10" stroke-width="2.5"></line>
+                    <line x1="12" y1="10" x2="12.01" y2="10" stroke-width="2.5"></line>
+                    <line x1="16" y1="10" x2="16.01" y2="10" stroke-width="2.5"></line>
+                </svg>
+                <span>Get in touch</span>
+            </a>
+        </div>
+    </section>
 
-                <div class="faq-list">
-                    <div class="faq-item open">
-                        <button type="button" class="faq-trigger">
-                            <span>How quickly will someone reply?</span>
-                            <span class="faq-arrow">&darr;</span>
-                        </button>
-                        <div class="faq-content">
-                            Within one business day, counted against the desk closest to you. If your enquiry arrives on a Friday evening in Singapore, our London or Johannesburg desk usually picks it up first.
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button type="button" class="faq-trigger">
-                            <span>Do you take on early stage businesses?</span>
-                            <span class="faq-arrow">&darr;</span>
-                        </button>
-                        <div class="faq-content">
-                            Yes, where there is a clear decision to be made rather than an idea to be explored. Our early stage work is usually a short diagnostic followed by a defined build, not an open ended retainer.
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button type="button" class="faq-trigger">
-                            <span>What happens after the first call?</span>
-                            <span class="faq-arrow">&darr;</span>
-                        </button>
-                        <div class="faq-content">
-                            You get a one-page summary of what we heard, what we think the real problem is, and two or three ways to approach it with indicative cost and duration. You are free to take that summary elsewhere.
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button type="button" class="faq-trigger">
-                            <span>Can you work under our procurement process?</span>
-                            <span class="faq-arrow">&darr;</span>
-                        </button>
-                        <div class="faq-content">
-                            We are registered to supply in South Africa, the United Kingdom, and the UAE, and we regularly complete vendor onboarding, security reviews, and data processing agreements. Send us the pack and we will work through it.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================================
-             9. BOTTOM CALL TO ACTION
-             ===================================================================== -->
-        <section class="bottom-cta-banner">
-            <div class="container">
-                <h2 class="bottom-cta-headline">
-                    Let’s build what <span class="italic-gold">lasts</span>
-                </h2>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxEliqueAdvisoryInquiry/viewform" target="_blank" rel="noopener noreferrer" class="btn-white-action">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <span>Start a Conversation</span>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- =========================================================================
-         10. SITE FOOTER
-         ========================================================================= -->
+    <!-- Corporate Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="images/logo-white.png" alt="E'lique Advisory" height="34" style="height: 34px; width: auto; filter: invert(1) brightness(0.2);" onerror="this.src='public/images/logo-white.png'; this.onerror=function(){ this.style.display='none'; };">
                     <h3 style="font-size: 1.45rem; color: var(--text-heading); margin-top: 6px;">E'lique Advisory</h3>
                     <p>
                         Built to Last. Ahead by Design.<br>
@@ -1983,64 +1648,45 @@
                     <ul>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="values.html">Our Values</a></li>
-                        <li><a href="#case-studies">Case Studies</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#services">Practice Areas</a></li>
+                        <li><a href="#contact">Get in Touch</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Practice Areas</h4>
                     <ul>
-                        <li><a href="#services">Strategy & Growth</a></li>
-                        <li><a href="#services">Digital & AI</a></li>
-                        <li><a href="#services">CFO & Cloud Accounting</a></li>
-                        <li><a href="#services">Tax & Global Mobility</a></li>
-                        <li><a href="#services">Risk & Governance</a></li>
+                        <li><a href="#services">Strategy &amp; Growth</a></li>
+                        <li><a href="#services">CFO &amp; Cloud Accounting</a></li>
+                        <li><a href="#services">Digital &amp; AI</a></li>
+                        <li><a href="#services">Tax &amp; Global Mobility</a></li>
+                        <li><a href="#services">Risk, Governance &amp; Compliance</a></li>
+                        <li><a href="#services">People &amp; Capability</a></li>
+                        <li><a href="#services">Public Sector &amp; Government</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Offices</h4>
                     <ul>
-                        <li><span style="color: var(--text-heading); font-weight: 500;">Johannesburg & Kimberley</span></li>
+                        <li><span style="color: var(--text-heading); font-weight: 500;">Johannesburg</span></li>
                         <li><span style="color: var(--text-heading); font-weight: 500;">London</span></li>
-                        <li><span style="color: var(--text-heading); font-weight: 500;">New York</span></li>
                         <li><span style="color: var(--text-heading); font-weight: 500;">Accra</span></li>
-                        <li><span style="color: var(--text-heading); font-weight: 500;">Dubai</span></li>
-                        <li><span style="color: var(--text-heading); font-weight: 500;">Singapore</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 E'lique Advisory Consulting. All rights reserved.</div>
+                <div>&copy; 2026 E'lique Advisory. All rights reserved.</div>
                 <div style="display: flex; gap: 18px;">
-                    <a href="mailto:info@eliqueadvisory.com" style="color: inherit; text-decoration: none;">info@eliqueadvisory.com</a>
+                    <a href="mailto:enquiries@eliqueadvisory.com" style="color: inherit; text-decoration: none;">enquiries@eliqueadvisory.com</a>
                     <a href="tel:+27767032038" style="color: inherit; text-decoration: none;">+27 76 703 2038</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- =========================================================================
-         11. FLOATING WHATSAPP CHAT CONCIERGE (Requested exact URL)
-         ========================================================================= -->
-    <a href="https://api.whatsapp.com/send?phone=27767032938&text=Hi%20there!%20E%27liquue%20Advisory%20is%20here%20to%20help%20you." target="_blank" rel="noopener noreferrer" class="whatsapp-concierge" aria-label="Chat on WhatsApp">
-        <div class="whatsapp-icon-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zM8.53 7.33c-.2 0-.44.08-.66.32-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.13.17 1.76 2.68 4.25 3.77.59.26 1.05.41 1.41.53.6.19 1.15.16 1.58.1.48-.07 1.48-.6 1.69-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.49-.3-.26-.13-1.48-.73-1.71-.82-.23-.08-.4-.13-.56.13-.17.25-.66.82-.81.99-.15.17-.3.19-.56.06-.26-.13-1.11-.41-2.11-1.3-.78-.7-1.31-1.56-1.46-1.82-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.16.17-.26.26-.44.09-.17.04-.33-.02-.46-.07-.13-.59-1.42-.81-1.95-.21-.51-.43-.44-.59-.45-.15-.01-.33-.01-.52-.01z"/>
-            </svg>
-        </div>
-        <div class="whatsapp-bubble">
-            <span class="whatsapp-bubble-eyebrow">ADVISORY DESK</span>
-            <strong>Chat on WhatsApp &rarr;</strong>
-        </div>
-    </a>
-
-    <!-- =========================================================================
-         12. AUTHENTIC GTRANSLATE REAL-TIME MULTILINGUAL WIDGET (Exact Staging Setup)
-         Translates whole DOM dynamically into 12 languages on click
-         ========================================================================= -->
+    <!-- Authentic GTranslate Real-time Multilingual Widget -->
     <div class="gtranslate_wrapper" id="gt-wrapper-48405205"></div>
     <script id="gt_widget_script_48405205-js-before">
         window.gtranslateSettings = window.gtranslateSettings || {};
@@ -2059,62 +1705,262 @@
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js?ver=3.1.1" defer></script>
 
-    <!-- =========================================================================
-         SCRIPTS: THEME TOGGLE, FAQ, LANGUAGE, MOBILE
-         ========================================================================= -->
+    <!-- Theme Toggle & Form Interaction Script -->
     <script>
-        // Theme Toggle: Light / Dark Mode
         const themeBtn = document.getElementById('theme-toggle-btn');
         const sunIcon = document.getElementById('theme-sun-icon');
         const moonIcon = document.getElementById('theme-moon-icon');
         const htmlRoot = document.documentElement;
 
-        // Check stored theme or default to light/ivory contrast
         const currentTheme = localStorage.getItem('elique_theme') || 'light';
         applyTheme(currentTheme);
 
-        themeBtn.addEventListener('click', () => {
-            const newTheme = htmlRoot.getAttribute('data-theme') === 'dark-full' ? 'light' : 'dark-full';
-            applyTheme(newTheme);
-            localStorage.setItem('elique_theme', newTheme);
-        });
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                const newTheme = htmlRoot.getAttribute('data-theme') === 'dark-full' ? 'light' : 'dark-full';
+                applyTheme(newTheme);
+                localStorage.setItem('elique_theme', newTheme);
+            });
+        }
 
         function applyTheme(theme) {
             htmlRoot.setAttribute('data-theme', theme);
             if (theme === 'dark-full') {
-                sunIcon.style.display = 'block';
-                moonIcon.style.display = 'none';
+                if (sunIcon) sunIcon.style.display = 'block';
+                if (moonIcon) moonIcon.style.display = 'none';
             } else {
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
+                if (sunIcon) sunIcon.style.display = 'none';
+                if (moonIcon) moonIcon.style.display = 'block';
             }
         }
 
-        // FAQ Accordion
-        document.querySelectorAll('.faq-trigger').forEach(trigger => {
-            trigger.addEventListener('click', function() {
-                const item = this.parentElement;
-                const wasOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-                if (!wasOpen) {
-                    item.classList.add('open');
-                }
-            });
-        });
-
-        // Mobile Menu Drawer Toggle
+        // Mobile drawer toggle
         const mobileToggle = document.getElementById('mobile-toggle');
         const mobileDrawer = document.getElementById('mobile-drawer');
         if (mobileToggle && mobileDrawer) {
             mobileToggle.addEventListener('click', () => {
                 mobileDrawer.classList.toggle('open');
             });
-            document.querySelectorAll('.m-link').forEach(link => {
+            mobileDrawer.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileDrawer.classList.remove('open');
                 });
             });
         }
+
+        // Interactive Contact Form Handling
+        const contactForm = document.getElementById('main-contact-form');
+        const successBox = document.getElementById('contact-form-success-box');
+        const submitBtn = document.getElementById('contact-submit-btn');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                if (!contactForm.checkValidity()) {
+                    contactForm.reportValidity();
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>Sending enquiry...</span>';
+
+                setTimeout(() => {
+                    contactForm.style.display = 'none';
+                    if (successBox) {
+                        successBox.classList.add('active');
+                        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<span>Send enquiry</span>';
+                }, 600);
+            });
+        }
+
+        // BCG-Inspired Fluid Ambient Background Media Controller
+        // Hardware accelerated, zero-latency canvas with visible flowing aurora waves
+        (function initHeroAmbientMedia() {
+            const canvas = document.getElementById('hero-ambient-canvas');
+            const heroSection = document.getElementById('about');
+            const pauseBtn = document.getElementById('hero-play-pause-btn');
+
+            if (!canvas || !heroSection) return;
+
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
+            let animationFrameId = null;
+            let isPaused = false;
+            let isInView = true;
+            let width = 0;
+            let height = 0;
+
+            // BCG-Inspired Liquid Ambient Fluid Nodes & Curtains
+            // Soft, organic chromatic fields that blend seamlessly without sharp edges
+            const beams = [
+                {
+                    x0: 0.25,
+                    angle: 0.65,
+                    speedOffset: 0.0006,
+                    speedAngle: 0.0004,
+                    phase: 0.5,
+                    c0: 'rgba(218, 165, 32, 0.40)',    // Warm Sahara Gold
+                    cMid: 'rgba(157, 78, 221, 0.35)',  // Royal Violet
+                    c1: 'rgba(26, 0, 36, 0)'
+                },
+                {
+                    x0: 0.70,
+                    angle: -0.55,
+                    speedOffset: 0.0008,
+                    speedAngle: 0.0005,
+                    phase: 2.4,
+                    c0: 'rgba(16, 185, 129, 0.32)',    // Emerald Shimmer (BCG Touch)
+                    cMid: 'rgba(224, 185, 100, 0.38)', // Champagne Highlight
+                    c1: 'rgba(32, 0, 44, 0)'
+                },
+                {
+                    x0: 0.45,
+                    angle: 0.40,
+                    speedOffset: 0.0005,
+                    speedAngle: 0.0007,
+                    phase: 4.1,
+                    c0: 'rgba(192, 38, 211, 0.38)',    // Luminous Plum
+                    cMid: 'rgba(123, 44, 191, 0.30)',  // Deep Amethyst
+                    c1: 'rgba(20, 0, 30, 0)'
+                }
+            ];
+
+            const orbs = [
+                { baseX: 0.80, baseY: 0.25, r: 0.50, sx: 0.0009, sy: 0.0011, ax: 0.14, ay: 0.12, px: 0, py: 1.0, pulse: 0.0012, inner: 'rgba(224, 185, 100, 0.50)', mid: 'rgba(196, 160, 82, 0.22)' },
+                { baseX: 0.20, baseY: 0.75, r: 0.55, sx: 0.0007, sy: 0.0010, ax: 0.16, ay: 0.14, px: 2.1, py: 0.5, pulse: 0.0009, inner: 'rgba(157, 78, 221, 0.55)', mid: 'rgba(90, 18, 122, 0.25)' },
+                { baseX: 0.60, baseY: 0.55, r: 0.48, sx: 0.0011, sy: 0.0008, ax: 0.12, ay: 0.15, px: 4.2, py: 2.8, pulse: 0.0015, inner: 'rgba(16, 185, 129, 0.38)', mid: 'rgba(15, 76, 58, 0.18)' },
+                { baseX: 0.35, baseY: 0.35, r: 0.52, sx: 0.0008, sy: 0.0012, ax: 0.15, ay: 0.10, px: 1.2, py: 3.4, pulse: 0.0010, inner: 'rgba(217, 70, 239, 0.45)', mid: 'rgba(147, 51, 234, 0.20)' },
+                { baseX: 0.90, baseY: 0.80, r: 0.45, sx: 0.0010, sy: 0.0009, ax: 0.10, ay: 0.12, px: 3.5, py: 1.8, pulse: 0.0014, inner: 'rgba(245, 158, 11, 0.42)', mid: 'rgba(218, 165, 32, 0.18)' }
+            ];
+
+            function resize() {
+                const rect = heroSection.getBoundingClientRect();
+                width = rect.width;
+                height = rect.height;
+                const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+                canvas.width = Math.floor(width * dpr);
+                canvas.height = Math.floor(height * dpr);
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                ctx.scale(dpr, dpr);
+            }
+
+            function draw(timestamp) {
+                ctx.clearRect(0, 0, width, height);
+
+                const t = timestamp;
+
+                // 1. Soft sweeping diagonal light curtains
+                for (let b = 0; b < beams.length; b++) {
+                    const beam = beams[b];
+                    const shift = Math.sin(t * beam.speedOffset + beam.phase) * (width * 0.18);
+                    const x0 = width * beam.x0 + shift;
+                    const curAngle = beam.angle + Math.sin(t * beam.speedAngle + beam.phase) * 0.15;
+                    const x1 = x0 + Math.cos(curAngle) * width;
+                    const y1 = height;
+
+                    const grad = ctx.createLinearGradient(x0, 0, x1, y1);
+                    grad.addColorStop(0, beam.c0);
+                    grad.addColorStop(0.5, beam.cMid);
+                    grad.addColorStop(1, beam.c1);
+
+                    ctx.save();
+                    ctx.globalCompositeOperation = 'screen';
+                    ctx.fillStyle = grad;
+                    ctx.fillRect(0, 0, width, height);
+                    ctx.restore();
+                }
+
+                // 2. Liquid chromatic orbs drifting and breathing organically
+                for (let i = 0; i < orbs.length; i++) {
+                    const orb = orbs[i];
+                    const x = width * (orb.baseX + Math.sin(t * orb.sx + orb.px) * orb.ax + Math.cos(t * orb.sx * 0.6) * 0.04);
+                    const y = height * (orb.baseY + Math.cos(t * orb.sy + orb.py) * orb.ay + Math.sin(t * orb.sy * 0.7) * 0.03);
+                    const radius = Math.max(width, height) * (orb.r + Math.sin(t * orb.pulse + orb.px) * 0.05);
+
+                    const grad = ctx.createRadialGradient(x, y, 0, x, y, radius);
+                    grad.addColorStop(0, orb.inner);
+                    grad.addColorStop(0.55, orb.mid);
+                    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                    ctx.save();
+                    ctx.globalCompositeOperation = 'screen';
+                    ctx.fillStyle = grad;
+                    ctx.beginPath();
+                    ctx.arc(x, y, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+
+                if (!isPaused && isInView) {
+                    animationFrameId = requestAnimationFrame(draw);
+                }
+            }
+
+            function updatePlayPauseUI() {
+                if (!pauseBtn) return;
+                const pauseIcon = pauseBtn.querySelector('.hero-icon-pause');
+                const playIcon = pauseBtn.querySelector('.hero-icon-play');
+
+                if (isPaused) {
+                    if (pauseIcon) pauseIcon.style.display = 'none';
+                    if (playIcon) playIcon.style.display = 'block';
+                    pauseBtn.setAttribute('aria-label', 'Play ambient background animation');
+                    pauseBtn.setAttribute('title', 'Play background animation');
+                } else {
+                    if (pauseIcon) pauseIcon.style.display = 'block';
+                    if (playIcon) playIcon.style.display = 'none';
+                    pauseBtn.setAttribute('aria-label', 'Pause ambient background animation');
+                    pauseBtn.setAttribute('title', 'Pause background animation');
+                }
+            }
+
+            // Initialize size and start loop
+            resize();
+            window.addEventListener('resize', () => {
+                resize();
+                if (isPaused) draw(performance.now());
+            }, { passive: true });
+
+            // Optimize performance: pause loop automatically when out of viewport
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        isInView = entry.isIntersecting;
+                        if (isInView && !isPaused && !animationFrameId) {
+                            animationFrameId = requestAnimationFrame(draw);
+                        } else if (!isInView && animationFrameId) {
+                            cancelAnimationFrame(animationFrameId);
+                            animationFrameId = null;
+                        }
+                    });
+                }, { threshold: 0.05 });
+                observer.observe(heroSection);
+            }
+
+            // Start animation immediately on load
+            animationFrameId = requestAnimationFrame(draw);
+
+            // Pause/play toggle button click listener
+            if (pauseBtn) {
+                pauseBtn.addEventListener('click', () => {
+                    isPaused = !isPaused;
+                    updatePlayPauseUI();
+
+                    if (!isPaused) {
+                        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+                        animationFrameId = requestAnimationFrame(draw);
+                    } else if (animationFrameId) {
+                        cancelAnimationFrame(animationFrameId);
+                        animationFrameId = null;
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 </html>
