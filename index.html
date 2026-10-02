@@ -290,16 +290,16 @@
 
         .hero-ambient-canvas {
             position: absolute;
-            top: -20%;
-            left: -20%;
-            width: 140%;
-            height: 140%;
+            top: -5%;
+            left: -5%;
+            width: 110%;
+            height: 110%;
             pointer-events: none;
             z-index: 1;
             opacity: 0.95;
             mix-blend-mode: screen;
-            filter: blur(48px);
-            -webkit-filter: blur(48px);
+            filter: blur(14px);
+            -webkit-filter: blur(14px);
             transform: translateZ(0);
         }
 
@@ -1795,47 +1795,61 @@
             let width = 0;
             let height = 0;
 
-            // BCG-Inspired Liquid Ambient Fluid Nodes & Curtains
-            // Soft, organic chromatic fields that blend seamlessly without sharp edges
-            const beams = [
+            // Fluid flowing aurora ribbons tuned strictly to E'lique website brand colors
+            // (Sahara Gold #C4A052, Champagne #D8B464, Royal Violet #5A189A, Imperial Plum #4A0E4E)
+            const ribbons = [
                 {
-                    x0: 0.25,
-                    angle: 0.65,
-                    speedOffset: 0.0006,
-                    speedAngle: 0.0004,
-                    phase: 0.5,
-                    c0: 'rgba(218, 165, 32, 0.40)',    // Warm Sahara Gold
-                    cMid: 'rgba(157, 78, 221, 0.35)',  // Royal Violet
-                    c1: 'rgba(26, 0, 36, 0)'
+                    baseY: 0.40,
+                    thickness: 0.35,
+                    amp1: 65,
+                    amp2: 45,
+                    freq1: 0.0022,
+                    freq2: 0.0015,
+                    speed1: 0.0016,
+                    speed2: 0.0012,
+                    phase1: 0.5,
+                    phase2: 1.8,
+                    color1: 'rgba(196, 160, 82, 0.42)',   // Sahara Gold (#C4A052)
+                    color2: 'rgba(216, 180, 100, 0.36)',  // Warm Champagne (#D8B464)
+                    color3: 'rgba(32, 0, 44, 0)'
                 },
                 {
-                    x0: 0.70,
-                    angle: -0.55,
-                    speedOffset: 0.0008,
-                    speedAngle: 0.0005,
-                    phase: 2.4,
-                    c0: 'rgba(16, 185, 129, 0.32)',    // Emerald Shimmer (BCG Touch)
-                    cMid: 'rgba(224, 185, 100, 0.38)', // Champagne Highlight
-                    c1: 'rgba(32, 0, 44, 0)'
+                    baseY: 0.52,
+                    thickness: 0.40,
+                    amp1: 75,
+                    amp2: 50,
+                    freq1: 0.0018,
+                    freq2: 0.0024,
+                    speed1: 0.0013,
+                    speed2: 0.0018,
+                    phase1: 2.8,
+                    phase2: 0.4,
+                    color1: 'rgba(90, 24, 154, 0.44)',    // Royal Violet (#5A189A)
+                    color2: 'rgba(123, 44, 191, 0.32)',   // Deep Amethyst
+                    color3: 'rgba(196, 160, 82, 0.28)'   // Sahara Gold highlight
                 },
                 {
-                    x0: 0.45,
-                    angle: 0.40,
-                    speedOffset: 0.0005,
-                    speedAngle: 0.0007,
-                    phase: 4.1,
-                    c0: 'rgba(192, 38, 211, 0.38)',    // Luminous Plum
-                    cMid: 'rgba(123, 44, 191, 0.30)',  // Deep Amethyst
-                    c1: 'rgba(20, 0, 30, 0)'
+                    baseY: 0.25,
+                    thickness: 0.30,
+                    amp1: 55,
+                    amp2: 35,
+                    freq1: 0.0028,
+                    freq2: 0.0012,
+                    speed1: 0.0020,
+                    speed2: 0.0014,
+                    phase1: 4.2,
+                    phase2: 3.1,
+                    color1: 'rgba(74, 14, 78, 0.38)',     // Imperial Plum (#4A0E4E)
+                    color2: 'rgba(196, 160, 82, 0.32)',   // Sahara Gold Silk
+                    color3: 'rgba(20, 0, 28, 0)'
                 }
             ];
 
+            // Luminous glowing ambient nodes in website brand colors
             const orbs = [
-                { baseX: 0.80, baseY: 0.25, r: 0.50, sx: 0.0009, sy: 0.0011, ax: 0.14, ay: 0.12, px: 0, py: 1.0, pulse: 0.0012, inner: 'rgba(224, 185, 100, 0.50)', mid: 'rgba(196, 160, 82, 0.22)' },
-                { baseX: 0.20, baseY: 0.75, r: 0.55, sx: 0.0007, sy: 0.0010, ax: 0.16, ay: 0.14, px: 2.1, py: 0.5, pulse: 0.0009, inner: 'rgba(157, 78, 221, 0.55)', mid: 'rgba(90, 18, 122, 0.25)' },
-                { baseX: 0.60, baseY: 0.55, r: 0.48, sx: 0.0011, sy: 0.0008, ax: 0.12, ay: 0.15, px: 4.2, py: 2.8, pulse: 0.0015, inner: 'rgba(16, 185, 129, 0.38)', mid: 'rgba(15, 76, 58, 0.18)' },
-                { baseX: 0.35, baseY: 0.35, r: 0.52, sx: 0.0008, sy: 0.0012, ax: 0.15, ay: 0.10, px: 1.2, py: 3.4, pulse: 0.0010, inner: 'rgba(217, 70, 239, 0.45)', mid: 'rgba(147, 51, 234, 0.20)' },
-                { baseX: 0.90, baseY: 0.80, r: 0.45, sx: 0.0010, sy: 0.0009, ax: 0.10, ay: 0.12, px: 3.5, py: 1.8, pulse: 0.0014, inner: 'rgba(245, 158, 11, 0.42)', mid: 'rgba(218, 165, 32, 0.18)' }
+                { cx: 0.78, cy: 0.30, r: 0.42, sx: 0.0014, sy: 0.0016, ax: 0.12, ay: 0.10, px: 0, py: 1.2, inner: 'rgba(196, 160, 82, 0.45)', mid: 'rgba(196, 160, 82, 0.18)' },
+                { cx: 0.20, cy: 0.70, r: 0.48, sx: 0.0011, sy: 0.0014, ax: 0.14, ay: 0.12, px: 2.5, py: 0.5, inner: 'rgba(90, 24, 154, 0.46)', mid: 'rgba(50, 0, 70, 0.20)' },
+                { cx: 0.50, cy: 0.45, r: 0.52, sx: 0.0016, sy: 0.0010, ax: 0.10, ay: 0.14, px: 4.5, py: 3.0, inner: 'rgba(216, 180, 100, 0.40)', mid: 'rgba(196, 160, 82, 0.15)' }
             ];
 
             function resize() {
@@ -1854,37 +1868,16 @@
 
                 const t = timestamp;
 
-                // 1. Soft sweeping diagonal light curtains
-                for (let b = 0; b < beams.length; b++) {
-                    const beam = beams[b];
-                    const shift = Math.sin(t * beam.speedOffset + beam.phase) * (width * 0.18);
-                    const x0 = width * beam.x0 + shift;
-                    const curAngle = beam.angle + Math.sin(t * beam.speedAngle + beam.phase) * 0.15;
-                    const x1 = x0 + Math.cos(curAngle) * width;
-                    const y1 = height;
-
-                    const grad = ctx.createLinearGradient(x0, 0, x1, y1);
-                    grad.addColorStop(0, beam.c0);
-                    grad.addColorStop(0.5, beam.cMid);
-                    grad.addColorStop(1, beam.c1);
-
-                    ctx.save();
-                    ctx.globalCompositeOperation = 'screen';
-                    ctx.fillStyle = grad;
-                    ctx.fillRect(0, 0, width, height);
-                    ctx.restore();
-                }
-
-                // 2. Liquid chromatic orbs drifting and breathing organically
+                // 1. Draw drifting luminous light orbs
                 for (let i = 0; i < orbs.length; i++) {
                     const orb = orbs[i];
-                    const x = width * (orb.baseX + Math.sin(t * orb.sx + orb.px) * orb.ax + Math.cos(t * orb.sx * 0.6) * 0.04);
-                    const y = height * (orb.baseY + Math.cos(t * orb.sy + orb.py) * orb.ay + Math.sin(t * orb.sy * 0.7) * 0.03);
-                    const radius = Math.max(width, height) * (orb.r + Math.sin(t * orb.pulse + orb.px) * 0.05);
+                    const x = width * (orb.cx + Math.sin(t * orb.sx + orb.px) * orb.ax);
+                    const y = height * (orb.cy + Math.cos(t * orb.sy + orb.py) * orb.ay);
+                    const radius = Math.max(width, height) * (orb.r + Math.sin(t * 0.0015 + orb.px) * 0.04);
 
                     const grad = ctx.createRadialGradient(x, y, 0, x, y, radius);
                     grad.addColorStop(0, orb.inner);
-                    grad.addColorStop(0.55, orb.mid);
+                    grad.addColorStop(0.5, orb.mid);
                     grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
                     ctx.save();
@@ -1892,6 +1885,46 @@
                     ctx.fillStyle = grad;
                     ctx.beginPath();
                     ctx.arc(x, y, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+
+                // 2. Draw flowing luminous aurora ribbons
+                for (let r = 0; r < ribbons.length; r++) {
+                    const cfg = ribbons[r];
+                    const grad = ctx.createLinearGradient(0, 0, width, height);
+                    grad.addColorStop(0, cfg.color1);
+                    grad.addColorStop(0.5, cfg.color2);
+                    grad.addColorStop(1, cfg.color3);
+
+                    ctx.save();
+                    ctx.globalCompositeOperation = 'screen';
+                    ctx.fillStyle = grad;
+                    ctx.beginPath();
+
+                    const points = 32;
+                    const step = width / points;
+
+                    // Top wave
+                    ctx.moveTo(0, height);
+                    for (let i = 0; i <= points; i++) {
+                        const x = i * step;
+                        const w1 = Math.sin(x * cfg.freq1 + t * cfg.speed1 + cfg.phase1) * cfg.amp1;
+                        const w2 = Math.cos(x * cfg.freq2 - t * cfg.speed2 + cfg.phase2) * cfg.amp2;
+                        const y = height * cfg.baseY + w1 + w2;
+                        ctx.lineTo(x, y);
+                    }
+
+                    // Bottom wave creating ribbon thickness
+                    for (let i = points; i >= 0; i--) {
+                        const x = i * step;
+                        const w1 = Math.sin(x * cfg.freq1 + t * cfg.speed1 + cfg.phase1 + 0.4) * cfg.amp1;
+                        const w2 = Math.cos(x * cfg.freq2 - t * cfg.speed2 + cfg.phase2 + 0.3) * cfg.amp2;
+                        const y = height * (cfg.baseY + cfg.thickness) + w1 + w2;
+                        ctx.lineTo(x, y);
+                    }
+
+                    ctx.closePath();
                     ctx.fill();
                     ctx.restore();
                 }

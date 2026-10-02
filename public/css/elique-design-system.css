@@ -269,16 +269,16 @@ h1, h2, h3, h4, .serif {
 
 .hero-ambient-canvas {
     position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 140%;
-    height: 140%;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
     pointer-events: none;
     z-index: 1;
     opacity: 0.95;
     mix-blend-mode: screen;
-    filter: blur(48px);
-    -webkit-filter: blur(48px);
+    filter: blur(14px);
+    -webkit-filter: blur(14px);
     transform: translateZ(0);
 }
 
