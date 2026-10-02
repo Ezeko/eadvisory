@@ -261,10 +261,16 @@ h1, h2, h3, h4, .serif {
         radial-gradient(circle at 15% 85%, rgba(88, 22, 122, 0.35) 0%, transparent 50%),
         linear-gradient(170deg, #250035 0%, #12001A 100%);
     color: #FFFFFF;
-    padding: 85px 0 95px;
+    min-height: calc(100vh - 78px);
+    min-height: calc(100dvh - 78px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0;
     position: relative;
     border-bottom: 1px solid var(--header-border);
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .hero-ambient-canvas {
@@ -1386,6 +1392,11 @@ h1, h2, h3, h4, .serif {
     }
     .mobile-hamburger {
         display: block;
+    }
+    .hero-section {
+        min-height: calc(100vh - 70px);
+        min-height: calc(100dvh - 70px);
+        padding: 48px 0;
     }
     .hero-headline {
         font-size: 2.6rem;
