@@ -1143,17 +1143,71 @@ h1, h2, h3, h4, .serif {
    9. BOTTOM CALL TO ACTION
    ========================================================================== */
 .bottom-cta-banner {
-    background: var(--bg-hero);
-    color: #FFFFFF;
-    padding: 70px 0;
+    background: var(--bg-page);
+    padding: 70px 0 80px;
+    border-top: none;
+}
+
+.bottom-cta-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #20002C url('../images/cta-card-bg-clean.png') center center / cover no-repeat;
+    padding: 76px 24px;
     text-align: center;
-    border-top: 1px solid var(--header-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 16px 40px rgba(32, 0, 44, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .bottom-cta-headline {
-    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+    font-weight: 500;
     color: #FFFFFF;
-    margin-bottom: 24px;
+    margin-bottom: 26px;
+    line-height: 1.15;
+    position: relative;
+    z-index: 2;
+}
+
+.bottom-cta-headline .italic-gold {
+    font-style: italic;
+    color: var(--gold-accent);
+}
+
+.btn-conversation {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #FFFFFF;
+    color: #20002C;
+    padding: 13px 26px;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 2;
+}
+
+.btn-conversation:hover {
+    background: #FAF7F2;
+    color: #4A1068;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.btn-conversation svg {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* ==========================================================================
