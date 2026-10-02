@@ -349,7 +349,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.78rem;
+            font-size: clamp(0.85rem, 1.1vw, 1.02rem);
             text-transform: uppercase;
             letter-spacing: 0.22em;
             font-weight: 700;
@@ -358,26 +358,26 @@
         }
 
         .hero-headline {
-            font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+            font-size: clamp(3.2rem, 6.4vw, 5.8rem);
             line-height: 1.08;
-            max-width: 900px;
-            margin-bottom: 22px;
+            max-width: 1050px;
+            margin-bottom: 24px;
             color: #FFFFFF;
         }
 
         .hero-divider {
-            width: 80px;
-            height: 2px;
+            width: 90px;
+            height: 3px;
             background: var(--gold-accent);
-            margin-bottom: 26px;
+            margin-bottom: 28px;
         }
 
         .hero-paragraph {
-            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-            color: rgba(255, 255, 255, 0.88);
-            max-width: 660px;
-            line-height: 1.65;
-            margin-bottom: 38px;
+            font-size: clamp(1.2rem, 2.1vw, 1.55rem);
+            color: rgba(255, 255, 255, 0.90);
+            max-width: 760px;
+            line-height: 1.6;
+            margin-bottom: 42px;
             font-weight: 400;
         }
 
@@ -392,8 +392,8 @@
             background: #FFFFFF;
             color: #20002C;
             font-weight: 600;
-            font-size: 0.95rem;
-            padding: 13px 26px;
+            font-size: 1.05rem;
+            padding: 15px 30px;
             border-radius: var(--radius-btn);
             text-decoration: none;
             display: inline-flex;
@@ -412,7 +412,7 @@
         .btn-link-explore {
             color: #FFFFFF;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
@@ -1054,7 +1054,8 @@
             .main-nav-links { display: none; }
             .mobile-hamburger { display: block; }
             .hero-section { min-height: calc(100vh - 70px); min-height: calc(100dvh - 70px); padding: 48px 0; }
-            .hero-headline { font-size: 2.6rem; }
+            .hero-headline { font-size: clamp(2.6rem, 8vw, 3.2rem); line-height: 1.1; }
+            .hero-paragraph { font-size: 1.15rem; }
             .values-header { grid-template-columns: 1fr; gap: 16px; }
             .values-grid { grid-template-columns: 1fr; }
             .value-highlight-card.span-two-cols { grid-column: span 1; }
