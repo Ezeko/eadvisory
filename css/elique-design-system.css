@@ -343,9 +343,9 @@ h1, h2, h3, h4, .serif {
 }
 
 .hero-headline {
-    font-size: clamp(3.2rem, 6.4vw, 5.8rem);
-    line-height: 1.08;
-    max-width: 1050px;
+    font-size: clamp(3.2rem, 5.8vw, 5.6rem);
+    line-height: 1.1;
+    max-width: 1120px;
     margin-bottom: 24px;
     color: #FFFFFF;
 }
@@ -358,10 +358,10 @@ h1, h2, h3, h4, .serif {
 }
 
 .hero-paragraph {
-    font-size: clamp(1.2rem, 2.1vw, 1.55rem);
-    color: rgba(255, 255, 255, 0.90);
-    max-width: 760px;
-    line-height: 1.6;
+    font-size: clamp(1.15rem, 1.85vw, 1.45rem);
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 980px;
+    line-height: 1.65;
     margin-bottom: 42px;
     font-weight: 400;
 }
