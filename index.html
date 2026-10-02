@@ -16,10 +16,10 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- Google Fonts: Refined Editorial Serif + Grotesque Sans -->
+    <!-- Google Fonts: Libre Baskerville (Brand Serif) & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
@@ -28,27 +28,28 @@
            ========================================================================== */
 
         :root {
-            /* Dark Theme (Default) */
-            --bg-hero: #20002C;
-            --bg-hero-deep: #13001C;
+            /* Brand Theme */
+            --bg-hero: #2D0040;
+            --bg-hero-deep: #1A0026;
             --bg-page: #FAF8F5;
-            --bg-page-alt: #F3EFE8;
+            --bg-page-alt: #F5F0E8;
             --bg-card: #FFFFFF;
-            --bg-card-border: #E8E1D5;
-            --border-color: #E8E1D5;
-            --text-heading: #20002C;
-            --text-body: #3B3834;
-            --text-muted: #6E685F;
-            --gold-accent: #C4A052;
-            --gold-hover: #D8B464;
-            --gold-soft: rgba(196, 160, 82, 0.15);
-            --header-bg: rgba(32, 0, 44, 0.95);
-            --header-border: rgba(196, 160, 82, 0.2);
+            --bg-card-border: #D8D0C4;
+            --border-color: #D8D0C4;
+            --text-heading: #2D0040;
+            --text-body: #191919;
+            --text-muted: #5E584F;
+            --gold-accent: #B6965B;
+            --gold-hover: #C7A76C;
+            --gold-soft: rgba(182, 150, 91, 0.15);
+            --evergreen-teal: #184446;
+            --header-bg: rgba(45, 0, 64, 0.95);
+            --header-border: rgba(182, 150, 91, 0.2);
             --header-text: #FFFFFF;
-            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-serif: 'Baskerville BT', 'Libre Baskerville', Baskerville, 'Cormorant Garamond', Georgia, serif;
             --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius-btn: 4px;
-            --radius-card: 10px;
+            --radius-btn: 6px;
+            --radius-card: 14px;
             --transition: 0.25s ease;
         }
 
@@ -1248,7 +1249,7 @@
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="brand-wrapper" aria-label="E'lique Advisory">
-                    <img src="images/logo-white.png" alt="E'lique Advisory" class="brand-logo-img" onerror="this.src='public/images/logo-white.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('landing-fallback-title').style.display='block'; };">
+                    <img src="images/logo-white.svg" alt="E'lique Advisory" class="brand-logo-img" onerror="this.src='images/logo-white.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('landing-fallback-title').style.display='block'; };">
                     <span id="landing-fallback-title" class="brand-title-fallback" style="display: none;">E'lique Advisory</span>
                 </a>
 
@@ -1787,7 +1788,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-brand-logo" aria-label="E'lique Advisory">
-                        <img src="images/logo-dark.png" alt="E'lique Advisory" class="footer-brand-img" onerror="this.src='public/images/logo-dark.png';">
+                        <img src="images/logo-dark.svg" alt="E'lique Advisory" class="footer-brand-img" onerror="this.src='images/logo-dark.png';">
                     </a>
                     <div class="footer-brand-statement">
                         <span class="statement-line-1">Built to Last.</span>

@@ -16,7 +16,7 @@
     <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -25,22 +25,23 @@
     <style>
         /* CSS Reset & Variables */
         :root {
-            --primary-plum: #20002C;
-            --primary-dark: #12001A;
-            --plum-deep: #160020;
-            --gold-accent: #AF8036;
-            --gold-light: #E0C79B;
+            --primary-plum: #2D0040;
+            --primary-dark: #1A0026;
+            --plum-deep: #1A0026;
+            --gold-accent: #B6965B;
+            --gold-light: #C7A76C;
+            --evergreen-teal: #184446;
             --bg-warm-creamy: #FAF8F5;
             --bg-card: #FFFFFF;
-            --border-color: #E6E0D4;
-            --text-heading: #20002C;
-            --text-body: #4A3E52;
-            --text-muted: #7E7485;
-            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --border-color: #D8D0C4;
+            --text-heading: #2D0040;
+            --text-body: #191919;
+            --text-muted: #5E584F;
+            --font-serif: 'Baskerville BT', 'Libre Baskerville', Baskerville, 'Cormorant Garamond', Georgia, serif;
             --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
             --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            --radius-btn: 4px;
-            --radius-card: 8px;
+            --radius-btn: 6px;
+            --radius-card: 14px;
         }
 
         [data-theme="dark-full"] {
@@ -737,7 +738,7 @@
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="brand-wrapper" aria-label="E'lique Advisory">
-                    <img src="images/logo-white.png" alt="E'lique Advisory" class="brand-logo-img" onerror="this.src='public/images/logo-white.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('values-fallback-title').style.display='block'; };">
+                    <img src="images/logo-white.svg" alt="E'lique Advisory" class="brand-logo-img" onerror="this.src='images/logo-white.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('values-fallback-title').style.display='block'; };">
                     <span id="values-fallback-title" class="brand-title-fallback" style="display: none;">E'lique Advisory</span>
                 </a>
 
@@ -1036,7 +1037,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-brand-logo" aria-label="E'lique Advisory">
-                        <img src="images/logo-white.png" alt="E'lique Advisory" class="footer-brand-img" onerror="this.src='public/images/logo-white.png';">
+                        <img src="images/logo-white.svg" alt="E'lique Advisory" class="footer-brand-img" onerror="this.src='images/logo-white.png';">
                     </a>
                     <div class="footer-brand-statement">
                         <span class="statement-line-1">Built to Last.</span>

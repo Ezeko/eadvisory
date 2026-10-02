@@ -1,26 +1,30 @@
 /* ==========================================================================
-   E'lique Advisory Consulting - Humanized Executive Design System
-   Theme: Deep Plum (#20002C), Warm Ivory (#FAF8F5), Champagne Gold (#C4A052)
+   E'lique Advisory - Official Brand System (Built to Last. Ahead by Design.)
+   Palette: Deep Aubergine (#2D0040), Antique Gold (#B6965B), Evergreen Teal (#184446),
+            Ivory Mist (#F5F0E8), Stone Linen (#D8D0C4), Charcoal Ink (#191919)
+   Typography: Baskerville BT / Libre Baskerville & Plus Jakarta Sans
    ========================================================================== */
 
 :root {
-    /* Dark Theme (Default) */
-    --bg-hero: #20002C;
-    --bg-hero-deep: #13001C;
+    /* Brand Theme */
+    --bg-hero: #2D0040;
+    --bg-hero-deep: #1A0026;
     --bg-page: #FAF8F5;
-    --bg-page-alt: #F3EFE8;
+    --bg-page-alt: #F5F0E8;
     --bg-card: #FFFFFF;
-    --bg-card-border: #E8E1D5;
-    --text-heading: #20002C;
-    --text-body: #3B3834;
-    --text-muted: #6E685F;
-    --gold-accent: #C4A052;
-    --gold-hover: #D8B464;
-    --gold-soft: rgba(196, 160, 82, 0.15);
-    --header-bg: rgba(32, 0, 44, 0.95);
-    --header-border: rgba(196, 160, 82, 0.2);
+    --bg-card-border: #D8D0C4;
+    --border-color: #D8D0C4;
+    --text-heading: #2D0040;
+    --text-body: #191919;
+    --text-muted: #5E584F;
+    --gold-accent: #B6965B;
+    --gold-hover: #C7A76C;
+    --gold-soft: rgba(182, 150, 91, 0.15);
+    --evergreen-teal: #184446;
+    --header-bg: rgba(45, 0, 64, 0.95);
+    --header-border: rgba(182, 150, 91, 0.2);
     --header-text: #FFFFFF;
-    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-serif: 'Baskerville BT', 'Libre Baskerville', Baskerville, 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --radius-btn: 6px;
     --radius-card: 14px;
@@ -28,25 +32,25 @@
 }
 
 [data-theme="light"] {
-    --bg-hero: #2A0438;
-    --bg-hero-deep: #1A0024;
+    --bg-hero: #2D0040;
+    --bg-hero-deep: #1A0026;
     --bg-page: #FAF8F5;
-    --bg-page-alt: #F2EEE5;
+    --bg-page-alt: #F5F0E8;
     --bg-card: #FFFFFF;
-    --bg-card-border: #E5DDD0;
-    --text-heading: #20002C;
-    --text-body: #3B3834;
-    --text-muted: #736C62;
+    --bg-card-border: #D8D0C4;
+    --text-heading: #2D0040;
+    --text-body: #191919;
+    --text-muted: #5E584F;
 }
 
 [data-theme="dark-full"] {
-    --bg-page: #13011A;
-    --bg-page-alt: #1A0224;
-    --bg-card: #20032C;
-    --bg-card-border: rgba(196, 160, 82, 0.2);
+    --bg-page: #15001E;
+    --bg-page-alt: #1D002B;
+    --bg-card: #250036;
+    --bg-card-border: rgba(182, 150, 91, 0.22);
     --text-heading: #FFFFFF;
-    --text-body: #DCD4CA;
-    --text-muted: #9E9486;
+    --text-body: #E5DFD7;
+    --text-muted: #A39B8E;
 }
 
 *, *::before, *::after {
