@@ -973,44 +973,127 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 2.2fr 1fr 1.3fr 1fr 1.2fr;
+            gap: 36px;
             margin-bottom: 48px;
         }
 
-        .footer-brand p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.6;
-            margin-top: 14px;
-            max-width: 320px;
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            margin-bottom: 24px;
+        }
+
+        .footer-brand-icon {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
+
+        .footer-brand-name {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            letter-spacing: -0.01em;
+        }
+
+        .footer-brand-statement {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .footer-brand-statement .statement-line-1 {
+            font-family: var(--font-serif);
+            font-size: 2.15rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            line-height: 1.15;
+        }
+
+        .footer-brand-statement .statement-line-2 {
+            font-family: var(--font-serif);
+            font-size: 2.15rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--gold-accent);
+            line-height: 1.15;
         }
 
         .footer-col h4 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--gold-accent);
-            font-weight: 700;
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--text-heading);
+            font-weight: 600;
             margin-bottom: 18px;
+            text-transform: none;
+            letter-spacing: 0;
         }
 
         .footer-col ul {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .footer-col a {
             color: var(--text-body);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             transition: color var(--transition);
         }
 
         .footer-col a:hover {
             color: var(--gold-accent);
+        }
+
+        .footer-social-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 4px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #20002C;
+            color: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all var(--transition);
+            box-shadow: 0 2px 8px rgba(32, 0, 44, 0.18);
+        }
+
+        .social-icon-btn:hover {
+            background: #5A189A;
+            color: var(--gold-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(90, 24, 154, 0.35);
+        }
+
+        [data-theme="dark-full"] .social-icon-btn {
+            background: rgba(196, 160, 82, 0.15);
+            border: 1px solid rgba(196, 160, 82, 0.3);
+            color: #FAF8F5;
+        }
+
+        [data-theme="dark-full"] .social-icon-btn:hover {
+            background: var(--gold-accent);
+            color: #20002C;
         }
 
         .footer-bottom {
@@ -1019,7 +1102,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             flex-wrap: wrap;
             gap: 16px;
@@ -1611,10 +1694,14 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3 style="font-size: 1.45rem; color: var(--text-heading); margin-top: 6px;">E'lique Advisory</h3>
-                    <p>
-                        Built to Last. Ahead by Design.
-                    </p>
+                    <a href="index.html" class="footer-brand-logo" aria-label="E'lique Advisory">
+                        <img src="images/favicon.png" alt="E'lique Advisory" class="footer-brand-icon" onerror="this.src='public/images/favicon.png';">
+                        <span class="footer-brand-name">E’lique</span>
+                    </a>
+                    <div class="footer-brand-statement">
+                        <span class="statement-line-1">Built to Last.</span>
+                        <span class="statement-line-2 italic-gold">Ahead by Design.</span>
+                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -1634,28 +1721,60 @@
                         <li><a href="#services">CFO &amp; Cloud Accounting</a></li>
                         <li><a href="#services">Digital &amp; AI</a></li>
                         <li><a href="#services">Tax &amp; Global Mobility</a></li>
-                        <li><a href="#services">Risk, Governance &amp; Compliance</a></li>
-                        <li><a href="#services">People &amp; Capability</a></li>
-                        <li><a href="#services">Public Sector &amp; Government</a></li>
+                        <li><a href="#services">Risk &amp; Compliance</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Offices</h4>
                     <ul>
-                        <li><span style="color: var(--text-heading); font-weight: 500;">Johannesburg</span></li>
-                        <li><span style="color: var(--text-heading); font-weight: 500;">London</span></li>
-                        <li><span style="color: var(--text-heading); font-weight: 500;">Accra</span></li>
+                        <li><a href="#contact">Career</a></li>
+                        <li><a href="#about">Blog</a></li>
+                        <li><a href="#contact">Support Center</a></li>
                     </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Social Media</h4>
+                    <div class="footer-social-row">
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram" title="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook" title="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube" title="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#20002C"></polygon>
+                            </svg>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn" title="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <div>&copy; 2026 E'lique Advisory. All rights reserved.</div>
-                <div style="display: flex; gap: 18px;">
-                    <a href="mailto:enquiries@eliqueadvisory.com" style="color: inherit; text-decoration: none;">enquiries@eliqueadvisory.com</a>
-                    <a href="tel:+27767032038" style="color: inherit; text-decoration: none;">+27 76 703 2038</a>
-                </div>
             </div>
         </div>
     </footer>
