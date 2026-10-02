@@ -1249,14 +1249,14 @@ h1, h2, h3, h4, .serif {
 .footer-social-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 4px;
+    gap: 12px;
+    margin-top: 6px;
     flex-wrap: nowrap;
 }
 
 .social-icon-btn {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: #20002C;
     color: #FFFFFF;
@@ -1266,13 +1266,23 @@ h1, h2, h3, h4, .serif {
     text-decoration: none;
     transition: all var(--transition);
     box-shadow: 0 2px 8px rgba(32, 0, 44, 0.18);
+    flex-shrink: 0;
 }
 
 .social-icon-btn:hover {
-    background: #5A189A;
+    background: #4A1068;
     color: var(--gold-accent);
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(90, 24, 154, 0.35);
+    box-shadow: 0 4px 14px rgba(74, 16, 104, 0.35);
+}
+
+.social-icon-btn .social-cutout {
+    fill: #20002C;
+    transition: fill var(--transition);
+}
+
+.social-icon-btn:hover .social-cutout {
+    fill: #4A1068;
 }
 
 [data-theme="dark-full"] .social-icon-btn {
@@ -1284,6 +1294,14 @@ h1, h2, h3, h4, .serif {
 [data-theme="dark-full"] .social-icon-btn:hover {
     background: var(--gold-accent);
     color: #20002C;
+}
+
+[data-theme="dark-full"] .social-icon-btn .social-cutout {
+    fill: #14001B;
+}
+
+[data-theme="dark-full"] .social-icon-btn:hover .social-cutout {
+    fill: #20002C;
 }
 
 .footer-bottom {

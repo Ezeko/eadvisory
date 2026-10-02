@@ -1055,14 +1055,14 @@
         .footer-social-row {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 4px;
+            gap: 12px;
+            margin-top: 6px;
             flex-wrap: nowrap;
         }
 
         .social-icon-btn {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             background: #20002C;
             color: #FFFFFF;
@@ -1072,13 +1072,23 @@
             text-decoration: none;
             transition: all var(--transition);
             box-shadow: 0 2px 8px rgba(32, 0, 44, 0.18);
+            flex-shrink: 0;
         }
 
         .social-icon-btn:hover {
-            background: #5A189A;
+            background: #4A1068;
             color: var(--gold-accent);
             transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(90, 24, 154, 0.35);
+            box-shadow: 0 4px 14px rgba(74, 16, 104, 0.35);
+        }
+
+        .social-icon-btn .social-cutout {
+            fill: #20002C;
+            transition: fill var(--transition);
+        }
+
+        .social-icon-btn:hover .social-cutout {
+            fill: #4A1068;
         }
 
         [data-theme="dark-full"] .social-icon-btn {
@@ -1090,6 +1100,14 @@
         [data-theme="dark-full"] .social-icon-btn:hover {
             background: var(--gold-accent);
             color: #20002C;
+        }
+
+        [data-theme="dark-full"] .social-icon-btn .social-cutout {
+            fill: #14001B;
+        }
+
+        [data-theme="dark-full"] .social-icon-btn:hover .social-cutout {
+            fill: #20002C;
         }
 
         .footer-bottom {
@@ -1733,35 +1751,35 @@
                     <h4>Social Media</h4>
                     <div class="footer-social-row">
                         <!-- Instagram -->
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram" title="Instagram">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <a href="#" class="social-icon-btn" aria-label="Instagram" title="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                <circle cx="12" cy="12" r="4.2"></circle>
+                                <circle cx="17.5" cy="6.5" r="1.1" fill="#FFFFFF" stroke="none"></circle>
                             </svg>
                         </a>
 
                         <!-- Facebook -->
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook" title="Facebook">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        <a href="#" class="social-icon-btn" aria-label="Facebook" title="Facebook">
+                            <svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="4.5" fill="#FFFFFF" />
+                                <path class="social-cutout" fill="#20002C" d="M15.8 11.2h-2.3V19h-3.4v-7.8H8.3V8.5h1.8V6.8c0-2.1 1.2-3.3 3.3-3.3 1 0 1.9.1 2.1.1v2.4h-1.4c-1 0-1.2.5-1.2 1.2v1.3h2.6l-.4 2.7z"/>
                             </svg>
                         </a>
 
                         <!-- YouTube -->
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube" title="YouTube">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#20002C"></polygon>
+                        <a href="#" class="social-icon-btn" aria-label="YouTube" title="YouTube">
+                            <svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="#FFFFFF" />
+                                <polygon class="social-cutout" points="10 8.5 15.8 12 10 15.5" fill="#20002C" />
                             </svg>
                         </a>
 
                         <!-- LinkedIn -->
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn" title="LinkedIn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
+                        <a href="#" class="social-icon-btn" aria-label="LinkedIn" title="LinkedIn">
+                            <svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="4.5" fill="#FFFFFF" />
+                                <path class="social-cutout" fill="#20002C" d="M6.2 9.2h2.5V18H6.2V9.2zm1.3-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5zm3.7 4h2.4v1.2h.03c.3-.6 1.2-1.4 2.5-1.4 2.7 0 3.2 1.8 3.2 4.1V18h-2.5v-4.3c0-1-.02-2.3-1.4-2.3-1.4 0-1.6 1.1-1.6 2.2V18h-2.5V9.2z"/>
                             </svg>
                         </a>
                     </div>
