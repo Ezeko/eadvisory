@@ -952,56 +952,70 @@
         /* 6. BOTTOM CALL TO ACTION */
         .bottom-cta-banner {
             background: var(--bg-page);
-            padding: 70px 0 80px;
+            padding: 60px 0 80px;
             border-top: none;
         }
 
         .bottom-cta-card {
             position: relative;
+            max-width: 968px;
+            width: 100%;
+            margin: 0 auto;
+            min-height: 250px;
             border-radius: 20px;
             overflow: hidden;
-            background: #20002C url('images/cta-card-bg-clean.png') center center / cover no-repeat;
-            padding: 76px 24px;
+            background: #20002C url('images/cta-card-bg-clean.png') center center / 100% 100% no-repeat;
+            padding: 46px 24px 44px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 16px 40px rgba(32, 0, 44, 0.16);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 16px 40px rgba(32, 0, 44, 0.22);
+        }
+
+        @media (max-width: 991px) {
+            .bottom-cta-card {
+                background-size: cover;
+                min-height: 230px;
+                padding: 40px 20px;
+            }
         }
 
         .bottom-cta-headline {
             font-family: var(--font-serif);
-            font-size: clamp(2.2rem, 3.8vw, 3.4rem);
-            font-weight: 500;
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 400;
             color: #FFFFFF;
-            margin-bottom: 26px;
+            margin-bottom: 22px;
             line-height: 1.15;
             position: relative;
             z-index: 2;
+            letter-spacing: -0.01em;
         }
 
         .bottom-cta-headline .italic-gold {
             font-style: italic;
             color: var(--gold-accent);
+            font-weight: 400;
         }
 
         .btn-conversation {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             background: #FFFFFF;
             color: #20002C;
-            padding: 13px 26px;
+            height: 42px;
+            padding: 0 22px;
             border-radius: 4px;
             font-family: var(--font-sans);
-            font-size: 0.94rem;
+            font-size: 0.88rem;
             font-weight: 600;
             text-decoration: none;
             transition: all var(--transition);
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 2;
         }
@@ -1010,12 +1024,13 @@
             background: #FAF7F2;
             color: #4A1068;
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
         }
 
         .btn-conversation svg {
             display: inline-block;
             vertical-align: middle;
+            flex-shrink: 0;
         }
 
         /* 7. FOOTER */
@@ -1747,9 +1762,10 @@
                     Let’s build what <span class="italic-gold">lasts</span>
                 </h2>
                 <a href="#contact" class="btn-conversation">
-                    <svg width="18" height="15" viewBox="0 0 20 16" fill="none" aria-hidden="true">
-                        <path d="M3 8L7.8 2.2C8.8 1 11.2 1 12.2 2.2L17 8" stroke="#20002C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 8C1 6.89543 1.89543 6 3 6H17C18.1046 6 19 6.89543 19 8V13C19 14.1046 18.1046 15 17 15H3C1.89543 15 1 14.1046 1 13V8ZM3 8L10 12L17 8V13H3V8Z" fill="#20002C" />
+                    <svg width="16" height="13" viewBox="0 0 16 13" fill="none" aria-hidden="true">
+                        <path d="M4 5.5L7.2 2.2C7.6 1.8 8.4 1.8 8.8 2.2L12 5.5" stroke="#20002C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="1.5" y="4.5" width="13" height="7.5" rx="1.5" stroke="#20002C" stroke-width="1.5"/>
+                        <path d="M2.5 5L8 8.5L13.5 5" fill="#20002C" stroke="#20002C" stroke-width="1.2" stroke-linejoin="round"/>
                     </svg>
                     <span>Start a Conversation</span>
                 </a>
