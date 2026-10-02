@@ -730,10 +730,8 @@
         }
 
         .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.25fr;
-            gap: 36px;
-            align-items: stretch;
+            max-width: 860px;
+            margin: 0 auto;
         }
 
         .direct-lines-box {
@@ -1048,7 +1046,7 @@
             .values-grid { grid-template-columns: repeat(2, 1fr); }
             .value-highlight-card.span-two-cols { grid-column: span 2; }
             .footprint-grid { grid-template-columns: repeat(2, 1fr); }
-            .contact-layout { grid-template-columns: 1fr; }
+            .contact-layout { max-width: 100%; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -1482,37 +1480,6 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="contact-layout">
-                <!-- Direct Lines -->
-                <div class="direct-lines-box">
-                    <div class="direct-lines-content-top">
-                        <span class="section-eyebrow">DIRECT LINES</span>
-                        <h2 style="font-size: 1.85rem; color: var(--text-heading); margin-bottom: 8px;">Skip the form if you already know who you need.</h2>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">
-                            Direct channels for commercial discussions, time-critical counsel, and media requests.
-                        </p>
-                    </div>
-
-                    <div class="direct-items-wrapper">
-                        <div class="direct-item">
-                            <div class="direct-tag">New engagements</div>
-                            <a href="mailto:enquiries@eliqueadvisory.com" class="direct-contact-link">enquiries@eliqueadvisory.com</a>
-                            <div class="direct-desc">Scoping, proposals and commercial terms.</div>
-                        </div>
-
-                        <div class="direct-item">
-                            <div class="direct-tag">Speak to us</div>
-                            <a href="tel:+27767032038" class="direct-contact-link">+27 76 703 2038</a>
-                            <div class="direct-desc">Monday to Friday, 09:00 to 18:00 SAST.</div>
-                        </div>
-
-                        <div class="direct-item">
-                            <div class="direct-tag">Press and speaking</div>
-                            <a href="mailto:press@eliqueadvisory.com" class="direct-contact-link">press@eliqueadvisory.com</a>
-                            <div class="direct-desc">Media requests and conference invitations.</div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- BCG-Style Interactive Contact Form -->
                 <div class="contact-form-card">
                     <span class="section-eyebrow" style="color: var(--gold-accent);">CONTACT SECTION</span>

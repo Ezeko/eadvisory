@@ -828,10 +828,8 @@ h1, h2, h3, h4, .serif {
 }
 
 .contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.25fr;
-    gap: 36px;
-    align-items: stretch;
+    max-width: 860px;
+    margin: 0 auto;
 }
 
 .direct-lines-box {
@@ -1379,7 +1377,7 @@ h1, h2, h3, h4, .serif {
         grid-template-columns: 1fr;
     }
     .contact-layout {
-        grid-template-columns: 1fr;
+        max-width: 100%;
     }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
