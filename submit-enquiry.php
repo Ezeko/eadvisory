@@ -79,7 +79,6 @@ $config = [
     'recipient_email' => $envVal('MAIL_TO_ADDRESS', 'hello@eliqueadvisory.com'),
     'from_email'      => $envVal('MAIL_FROM_ADDRESS', 'no-reply@eliqueadvisory.com'),
     'from_name'       => $envVal('MAIL_FROM_NAME', "E'lique Advisory"),
-    'send_auto_reply' => filter_var($envVal('MAIL_SEND_AUTO_REPLY', 'true'), FILTER_VALIDATE_BOOLEAN),
 ];
 
 // Always return JSON for AJAX requests
@@ -294,19 +293,26 @@ function dispatchEmail(
     }
 
     // Fallback to native cPanel PHP mail()
+    // Format headers and subject according to RFC 2047 to prevent MTA rejection on Exim / remote mail servers
+    $encodedFromName = '=?UTF-8?B?' . base64_encode($fromName) . '?=';
+    $encodedSubject  = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+
     $replyHeader = $replyToName !== ''
-        ? sprintf('Reply-To: %s <%s>', $replyToName, $replyToEmail)
-        : sprintf('Reply-To: %s', $replyToEmail);
+        ? sprintf('Reply-To: =?UTF-8?B?%s?= <%s>', base64_encode($replyToName), $replyToEmail)
+        : sprintf('Reply-To: <%s>', $replyToEmail);
 
     $headers = [
         'MIME-Version: 1.0',
         'Content-Type: text/html; charset=UTF-8',
-        sprintf('From: %s <%s>', $fromName, $fromEmail),
+        sprintf('From: %s <%s>', $encodedFromName, $fromEmail),
         $replyHeader,
         'X-Mailer: PHP/' . PHP_VERSION,
     ];
 
-    return @mail($toEmail, $subject, $htmlBody, implode("\r\n", $headers));
+    // The -f flag sets the envelope sender (MAIL FROM) in Exim, preventing cPanel from falling back to unix user
+    $mailParams = '-f ' . escapeshellarg($fromEmail);
+
+    return @mail($toEmail, $encodedSubject, $htmlBody, implode("\r\n", $headers), $mailParams);
 }
 
 /**
@@ -400,13 +406,14 @@ function sendViaSmtp(
         return false;
     }
 
+    $encodedFromName = '=?UTF-8?B?' . base64_encode($fromName) . '?=';
     $replyHeader = $replyToName !== ''
-        ? sprintf('"%s" <%s>', addslashes($replyToName), $replyToEmail)
-        : $replyToEmail;
+        ? sprintf('=?UTF-8?B?%s?= <%s>', base64_encode($replyToName), $replyToEmail)
+        : sprintf('<%s>', $replyToEmail);
 
     $headers = [
         'Date: ' . date('r'),
-        sprintf('From: "%s" <%s>', addslashes($fromName), $fromEmail),
+        sprintf('From: %s <%s>', $encodedFromName, $fromEmail),
         sprintf('To: <%s>', $toEmail),
         sprintf('Reply-To: %s', $replyHeader),
         'Subject: =?UTF-8?B?' . base64_encode($subject) . '?=',
@@ -425,8 +432,22 @@ function sendViaSmtp(
     return $ok;
 }
 
-$to      = $config['recipient_email'];
-$subject = sprintf("[E'lique Advisory] New %s Enquiry from %s (%s)", $safeEnquiryType, $safeName, $safeCompany);
+// All form submissions are routed strictly to the designated advisory inbox
+$to = $config['recipient_email'];
+
+// Sanitize subject to safe ASCII to ensure strict compatibility with all MTAs and Exim filters
+$cleanEnquiryType = preg_replace('/[^A-Za-z0-9 _-]/', '', $enquiryType);
+$cleanName        = preg_replace('/[^A-Za-z0-9 _-]/', '', $name);
+$cleanCompany     = preg_replace('/[^A-Za-z0-9 _-]/', '', $company);
+
+$subject = sprintf(
+    "[Elique Advisory] New %s Enquiry from %s",
+    $cleanEnquiryType !== '' ? $cleanEnquiryType : 'Website',
+    $cleanName !== '' ? $cleanName : 'Visitor'
+);
+if ($cleanCompany !== '') {
+    $subject .= " (" . $cleanCompany . ")";
+}
 
 $submittedAt        = gmdate('Y-m-d H:i:s') . ' UTC';
 $escapedName        = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
@@ -504,35 +525,6 @@ if ($dbLogged && $emailSent && $pdo !== null && $insertedId !== null) {
     } catch (PDOException $e) {
         error_log("E'lique Advisory DB Update Error: " . $e->getMessage());
     }
-}
-
-// Optional: Send confirmation copy to the user
-if ($emailSent && !empty($config['send_auto_reply'])) {
-    $replySubject = "We've received your enquiry — E'lique Advisory";
-    $replyBody = <<<HTML
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:24px;background-color:#FAF8F5;font-family:Arial,Helvetica,sans-serif;color:#1F1624;">
-    <table width="100%" cellpadding="0" cellspacing="0" style="max-width:580px;margin:0 auto;background:#FFFFFF;border:1px solid #E5DFD5;border-radius:8px;overflow:hidden;">
-        <tr>
-            <td style="background:#20002C;padding:22px 28px;border-bottom:3px solid #C4A052;">
-                <h2 style="margin:0;font-size:18px;color:#FFFFFF;">Thank you for contacting E'lique Advisory</h2>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding:26px 28px;font-size:14px;line-height:1.6;color:#1F1624;">
-                <p style="margin-top:0;">Dear {$escapedName},</p>
-                <p>Thank you for reaching out to <strong>E'lique Advisory</strong> regarding <strong>{$escapedEnquiryType}</strong>. We have received your enquiry and a member of our advisory team will respond within one business day.</p>
-                <p style="margin-bottom:0;">Warm regards,<br><strong>E'lique Advisory Team</strong><br><a href="mailto:{$config['recipient_email']}" style="color:#C4A052;text-decoration:none;">{$config['recipient_email']}</a></p>
-            </td>
-        </tr>
-    </table>
-</body>
-</html>
-HTML;
-
-    dispatchEmail($config, $safeEmail, $replySubject, $replyBody, $config['recipient_email'], $config['from_name']);
 }
 
 // ============================================================================
