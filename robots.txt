@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /submit-enquiry
+Disallow: /submit-enquiry.php
+Disallow: /database.sql
+
+Sitemap: https://eliqueadvisory.com/sitemap.xml

@@ -1,0 +1,14 @@
+# Environment variables & sensitive credentials
+.env
+.env.*
+!.env.example
+
+# Server & error logs
+*.log
+error_log
+
+# macOS & Editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp

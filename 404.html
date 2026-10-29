@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#20002C">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Page Not Found – E'lique Advisory</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-hero: #20002C;
+            --gold-accent: #C4A052;
+            --font-serif: 'Baskerville BT', 'Libre Baskerville', Baskerville, 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(196, 160, 82, 0.14) 0%, transparent 65%), #1A0024;
+            color: #FAF8F5;
+            font-family: var(--font-sans);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 32px 20px;
+        }
+        .card-404 {
+            max-width: 560px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(196, 160, 82, 0.28);
+            border-radius: 14px;
+            padding: 52px 40px;
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+        }
+        .brand-logo {
+            height: 44px;
+            width: auto;
+            margin-bottom: 32px;
+        }
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            line-height: 1.18;
+            margin-bottom: 16px;
+            color: #FFFFFF;
+        }
+        .italic-gold {
+            font-style: italic;
+            color: var(--gold-accent);
+            font-weight: 400;
+        }
+        p {
+            font-size: 0.98rem;
+            line-height: 1.65;
+            color: #D4CDD9;
+            margin-bottom: 32px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold-accent);
+            color: #180022;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.94rem;
+            padding: 13px 28px;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+        }
+        .btn-home:hover {
+            background: #D8B464;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <main class="card-404">
+        <a href="/">
+            <img src="/images/logo-white.svg" alt="E'lique Advisory" class="brand-logo" onerror="this.src='/images/logo-white.png';">
+        </a>
+        <div>
+            <span class="eyebrow">ERROR 404</span>
+        </div>
+        <h1>Page <span class="italic-gold">not found</span></h1>
+        <p>The page you are looking for does not exist or its URL has changed. Please return to the homepage to explore our practice areas and advisory desks.</p>
+        <a href="/" class="btn-home">
+            <span>Return to Homepage</span> &rarr;
+        </a>
+    </main>
+</body>
+</html>
+

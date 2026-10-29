@@ -1,0 +1,140 @@
+# BEGIN LSCACHE
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule litespeed/debug/.*\.log$ - [F,L]
+RewriteRule \.litespeed_conf\.dat - [F,L]
+</IfModule>
+<IfModule LiteSpeed>
+CacheLookup on
+RewriteRule .* - [E=Cache-Control:no-autoflush]
+
+### marker ASYNC start ###
+RewriteCond %{REQUEST_URI} /wp-admin/admin-ajax\.php
+RewriteCond %{QUERY_STRING} action=async_litespeed
+RewriteRule .* - [E=noabort:1]
+### marker ASYNC end ###
+
+### marker DROPQS start ###
+CacheKeyModify -qs:fbclid
+CacheKeyModify -qs:gclid
+CacheKeyModify -qs:utm*
+CacheKeyModify -qs:_ga
+### marker DROPQS end ###
+
+</IfModule>
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END LSCACHE
+# BEGIN NON_LSCACHE
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END NON_LSCACHE
+
+# ============================================================================
+# E'lique Advisory - Custom SEO, Extensionless URLs, Staging Guard & Caching
+# Target Production Domain: https://eliqueadvisory.com
+# ============================================================================
+
+# 1. Prevent directory browsing, disable MultiViews, and prioritize index.html
+Options -Indexes -MultiViews
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+
+<FilesMatch "^(database\.sql|\.env.*|\.git)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 2. Canonical Redirects & Extensionless URLs (.html & .php return 404 directly)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Force HTTPS and non-www ONLY on the production domain (leaves staging subdomains untouched)
+    RewriteCond %{HTTP_HOST} ^www\.eliqueadvisory\.com$ [NC]
+    RewriteRule ^ https://eliqueadvisory.com%{REQUEST_URI} [L,R=301]
+
+    RewriteCond %{HTTP_HOST} ^eliqueadvisory\.com$ [NC]
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://eliqueadvisory.com%{REQUEST_URI} [L,R=301]
+
+    # Return 404 Not Found if a user directly requests any .html or .php extension (e.g. /values.html, /index.html, /page.php)
+    RewriteCond %{ENV:REDIRECT_STATUS} ^$
+    RewriteCond %{THE_REQUEST} !/wp-admin/ [NC]
+    RewriteCond %{THE_REQUEST} \s/+[^\s?]*\.(html|php)[\s?] [NC]
+    RewriteRule ^ - [R=404,L]
+
+    # Return 404 Not Found if a user directly requests /index without extension
+    RewriteCond %{ENV:REDIRECT_STATUS} ^$
+    RewriteCond %{THE_REQUEST} \s/+(.+/)?index[\s?] [NC]
+    RewriteRule ^ - [R=404,L]
+
+    # Internally resolve clean extensionless URLs to .html files (e.g. /values -> values.html)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^([^\.]+?)/?$ $1.html [NC,L]
+
+    # Internally resolve clean extensionless URLs to .php files (e.g. /submit-enquiry -> submit-enquiry.php)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^([^\.]+?)/?$ $1.php [NC,L]
+</IfModule>
+
+# 3. Automatic Staging vs. Production SEO Indexing Control
+<IfModule mod_headers.c>
+    <If "%{HTTP_HOST} =~ /^(www\.)?eliqueadvisory\.com$/i">
+        Header always set X-Robots-Tag "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    </If>
+    <Else>
+        Header always set X-Robots-Tag "noindex, nofollow"
+    </Else>
+
+    # Security & SEO Trust Headers
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 4. Force UTF-8 encoding for SEO & multilingual rendering
+AddDefaultCharset UTF-8
+
+# 5. Enable GZIP / Deflate compression for Core Web Vitals (LCP / FCP)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript application/json image/svg+xml
+</IfModule>
+
+# 6. Browser Caching for static assets (PageSpeed Optimization)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
